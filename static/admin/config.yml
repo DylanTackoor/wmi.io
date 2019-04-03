@@ -1,0 +1,57 @@
+backend:
+  name: github
+  repo: DylanTackoor/plantvine.com
+
+site_url: https://plantvine.netlify.com
+logo_url: https://plantvine.netlify.com/admin/logo.png
+publish_mode: editorial_workflow
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: collections
+    label: Collections
+    label_singular: Collection
+    identifier_field: name
+    description: Collection of plants
+    folder: src/collections
+    create: true
+    fields:
+      - { name: name, label: Name }
+      - { name: 'active', label: 'Active', widget: 'boolean', default: false }
+      - label: 'Card Image'
+        name: 'cardImage'
+        widget: 'image'
+      - label: 'Header Image'
+        name: 'headerImage'
+        widget: 'image'
+      - label: 'SKUs'
+        name: 'SKUs'
+        widget: 'list'
+        field: { label: SKU, name: SKU }
+
+  - name: posts
+    label: Post
+    label_singular: Posts
+    description: Blog posts. TODO include guidlines here.
+    folder: src/posts
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+
+  - name: 'faq'
+    label: 'FAQ'
+    folder: 'src/faqs'
+    create: true
+    fields:
+      - label: 'Order'
+        name: 'order'
+        widget: 'number'
+        default: 1
+        valueType: 'int'
+        min: 1
+      - { label: 'Question', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Answer', name: 'body', widget: 'markdown' }

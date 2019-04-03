@@ -1,0 +1,117 @@
+{
+	"name": "plantvine.netlify.com",
+	"private": true,
+	"description": "Interior & exterior plants, tropicals, fruit trees, exotics, bromeliads, palms and more. All from the source. Order online or call us at 888-361-9998.",
+	"version": "0.1.0",
+	"author": "Dylan Tackoor <mynameisdylantackoor@gmail.com>",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dylantackoor/plantvine.com"
+	},
+	"engines": {
+		"node": ">=10.13.0",
+		"npm": ">=6"
+	},
+	"scripts": {
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"develop": "gatsby develop",
+		"start": "npm run develop",
+		"format": "prettier --write \"src/**/*.js\"",
+		"type": "npx @pieh/gatsby-type-gen",
+		"clean": "rimraf .cache public",
+		"test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+		"lint": "concurrently --names tslint,js,markdownlint,jsonlint --prefix-colors cyan.dim,yellow.dim,magenta.dim,white.dim npm:lint:ts npm:lint:js npm:lint:md npm:lint:json",
+		"lint:ts": "tslint 'src/**/*.ts?(x)'",
+		"lint:js": "eslint --report-unused-disable-directives --cache gatsby-*.js",
+		"lint:md": "markdownlint ./**/*.md --ignore node_modules dist",
+		"lint:json": "find . -name '*.json' -not -path './node_modules/*' -exec jsonlint --quiet {} \\;"
+	},
+	"dependencies": {
+		"@emotion/core": "^10.0.7",
+		"@emotion/styled": "^10.0.7",
+		"@types/dinero.js": "^1.4.0",
+		"babel-preset-gatsby": "^0.1.8",
+		"dinero.js": "^1.6.0",
+		"emotion-normalize": "^10.0.0",
+		"eslint-config-prettier": "^4.1.0",
+		"eslint-plugin-prettier": "^3.0.1",
+		"gatsby": "^2.3.4",
+		"gatsby-image": "^2.0.31",
+		"gatsby-plugin-accessibilityjs": "^1.0.3",
+		"gatsby-plugin-brotli": "^1.0.1",
+		"gatsby-plugin-canonical-urls": "^2.0.10",
+		"gatsby-plugin-catch-links": "^2.0.12",
+		"gatsby-plugin-emotion": "^4.0.4",
+		"gatsby-plugin-google-tagmanager": "^2.0.9",
+		"gatsby-plugin-manifest": "^2.0.22",
+		"gatsby-plugin-netlify": "^2.0.12",
+		"gatsby-plugin-netlify-cache": "^1.1.0",
+		"gatsby-plugin-netlify-cms": "^3.0.12",
+		"gatsby-plugin-netlify-cms-paths": "^1.2.1",
+		"gatsby-plugin-netlify-functions": "0.0.3",
+		"gatsby-plugin-offline": "^2.0.24",
+		"gatsby-plugin-react-helmet": "^3.0.7",
+		"gatsby-plugin-sharp": "^2.0.32",
+		"gatsby-plugin-sitemap": "^2.0.6",
+		"gatsby-plugin-stripe": "^1.2.0",
+		"gatsby-plugin-tslint": "0.0.2",
+		"gatsby-plugin-typescript": "^2.0.10",
+		"gatsby-plugin-web-font-loader": "^1.0.4",
+		"gatsby-plugin-webpack-bundle-analyzer": "^1.0.4",
+		"gatsby-plugin-webpack-size": "0.0.3",
+		"gatsby-plugin-zopfli": "^1.0.4",
+		"gatsby-remark-images": "^3.0.9",
+		"gatsby-source-filesystem": "^2.0.23",
+		"gatsby-source-stripe": "^2.1.9",
+		"gatsby-transformer-remark": "^2.3.2",
+		"gatsby-transformer-sharp": "^2.1.15",
+		"netlify-cms": "^2.9.0",
+		"react": "^16.8.3",
+		"react-dom": "^16.8.3",
+		"react-helmet": "^5.2.0",
+		"schema-dts": "^0.3.1"
+	},
+	"devDependencies": {
+		"@types/aws-lambda": "^8.10.23",
+		"@types/graphql": "^14.0.7",
+		"@types/node": "^10.12.18",
+		"@types/react": "^16.8.6",
+		"@types/react-dom": "^16.8.2",
+		"@types/react-helmet": "^5.0.8",
+		"concurrently": "^4.1.0",
+		"eslint": "^5.15.0",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-plugin-import": "^2.16.0",
+		"husky": "^1.3.1",
+		"jsonlint": "^1.6.3",
+		"lint-staged": "^8.1.5",
+		"markdownlint-cli": "^0.14.1",
+		"prettier": "^1.16.4",
+		"rimraf": "^2.6.3",
+		"tslint": "^5.13.1",
+		"tslint-loader": "^3.5.4",
+		"tslint-react": "^3.6.0",
+		"typescript": "3.3.3333"
+	},
+	"lint-staged": {
+		"*.{ts,tsx}": [
+			"tslint -c tslint.json -p tsconfig.json",
+			"git add"
+		],
+		"*.json": [
+			"jsonlint",
+			"git add"
+		],
+		"*.md": [
+			"markdownlint",
+			"git add"
+		]
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	}
+}

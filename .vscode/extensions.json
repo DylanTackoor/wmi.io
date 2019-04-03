@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"davidanson.vscode-markdownlint",
+		"dbaeumer.vscode-eslint",
+		"jpoissonnier.vscode-styled-components",
+		"kumar-harsh.graphql-for-vscode",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"wix.vscode-import-cost"
+	]
+}

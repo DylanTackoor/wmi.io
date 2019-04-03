@@ -1,0 +1,37 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Develop",
+			"type": "node",
+			"request": "launch",
+			"protocol": "inspector",
+			"program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+			"args": ["develop", "--open"],
+			"stopOnEntry": false,
+			"runtimeArgs": ["--nolazy"],
+			"sourceMaps": false,
+			"env": {
+				"GATSBY_GRAPHQL_IDE": "playground"
+			}
+		},
+		{
+			"name": "Build",
+			"type": "node",
+			"request": "launch",
+			"protocol": "inspector",
+			"program": "${workspaceRoot}/node_modules/gatsby/dist/bin/gatsby",
+			"stopOnEntry": false,
+			"args": ["build"],
+			"runtimeArgs": ["--nolazy"],
+			"sourceMaps": false
+		},
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Chrome",
+			"url": "https://localhost:8000",
+			"webRoot": "${workspaceFolder}"
+		}
+	]
+}
