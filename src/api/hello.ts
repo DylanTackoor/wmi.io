@@ -1,5 +1,4 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
-import { getLambdaURL } from '../utils'
 
 const helloWorld: APIGatewayProxyHandler = async event => {
 	const subject = `World`
@@ -12,4 +11,3 @@ const helloWorld: APIGatewayProxyHandler = async event => {
 }
 
 export const handler = helloWorld
-export const endpoint = getLambdaURL(__filename)
