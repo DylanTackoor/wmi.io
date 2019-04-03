@@ -3,7 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 
 // Assets
-const navLogo = require('../images/navlogo.svg')
+const navLogo = require('../images/navLogo.svg')
 
 // Elements
 const NavLogo = styled.img``
