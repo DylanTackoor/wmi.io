@@ -1,70 +1,57 @@
+import styled from '@emotion/styled'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
 import React, { FunctionComponent } from 'react'
 
+// Assets
+const navLogo = require('../images/navlogo.svg')
+
+// Elements
+const NavLogo = styled.img``
+
+const NavLinksContainer = styled.ul`
+	list-style: none;
+`
+
+// Component
 export const NavBar: FunctionComponent = () => {
-	const { navLogo } = useStaticQuery(graphql`
-		query {
-			navLogo: file(relativePath: { eq: "navLogo.png" }) {
-				childImageSharp {
-					fixed(height: 94) {
-						...GatsbyImageSharpFixed_withWebp
+	const { site } = useStaticQuery(
+		graphql`
+			query {
+				site {
+					siteMetadata {
+						title
 					}
 				}
 			}
-		}
-	`)
+		`
+	)
 
-	const leftLinks = [
+	const rightLinks = [
 		{
-			path: '/about-us',
+			path: '/work',
+			title: 'Work',
+			dropdown: [
+				{
+					path: '/work/resorts-world-bimini/',
+					title: 'Resorts World Bimini',
+				},
+			],
+		},
+		{
+			path: '/services',
+			title: 'Services',
+		},
+		{
+			path: '/about',
 			title: 'About',
 		},
 		{
-			dropdown: [
-				{
-					path: '/shop',
-					title: 'House Plants / Indoor / Interior',
-				},
-				{
-					path: '/shop',
-					title: 'Edible Fruits and Nuts',
-				},
-				{
-					path: '/shop',
-					title: 'Ferns',
-				},
-				{
-					path: '/shop',
-					title: 'Grasses and Bamboo',
-				},
-				{
-					path: '/shop',
-					title: 'Groundcovers',
-				},
-				{
-					path: '/shop',
-					title: 'Palms',
-				},
-				{
-					path: '/shop',
-					title: 'Shrubs',
-				},
-				{
-					path: '/shop',
-					title: 'Tropicals',
-				},
-				{
-					path: '/shop',
-					title: 'Vines and Climbers',
-				},
-				{
-					path: '/shop',
-					title: 'View All Categories',
-				},
-			],
-			path: '/shop',
-			title: 'Shop',
+			path: '/careers',
+			title: 'Careers',
+		},
+		{
+			path: '/contact',
+			title: 'Contact',
 		},
 		{
 			path: '/blog',
@@ -74,21 +61,17 @@ export const NavBar: FunctionComponent = () => {
 
 	return (
 		<nav>
-			{/* <div class='top' /> */}
-
-			{/* Bottom */}
-			<div>
-				<ul>
-					{leftLinks.map(link => (
-						<li key={link.title} style={{ display: 'inline-block' }}>
-							<Link to={link.path}>{link.title}</Link>
-						</li>
-					))}
-				</ul>
-				<Link to='/'>
-					<Img fixed={navLogo.childImageSharp.fixed} />
-				</Link>
-			</div>
+			<Link to='/'>
+				{/* TODO: pull alt from config */}
+				<NavLogo src={navLogo} alt={site.siteMetadata.title} />
+			</Link>
+			<ul>
+				{rightLinks.map(link => (
+					<li key={link.title} style={{ display: 'inline-block' }}>
+						<Link to={link.path}>{link.title}</Link>
+					</li>
+				))}
+			</ul>
 		</nav>
 	)
 }

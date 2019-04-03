@@ -1,5 +1,5 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
-import { getLambdaURL } from '..//utils'
+import { getLambdaURL } from '../utils'
 
 const helloWorld: APIGatewayProxyHandler = async event => {
 	const subject = `World`

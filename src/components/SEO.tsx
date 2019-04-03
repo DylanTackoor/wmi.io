@@ -45,13 +45,10 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 					name: `description`,
 				},
 				{
-					content: '7486544e13fc40edbfaa2db898186400',
+					content: 'TODO:',
 					name: 'p:domain_verify',
 				},
 			]}
-		>
-			<link rel='profile' href='https://gmpg.org/xfn/11' />
-			<link rel='pingback' href='https://www.plantvine.com/xmlrpc.php' />
-		</Helmet>
+		/>
 	)
 }

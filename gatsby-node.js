@@ -21,16 +21,17 @@ exports.createPages = async ({ graphql, actions }) => {
 					}
 				}
 			}
-			allStripeProduct(filter: { active: { eq: true } }) {
-				edges {
-					node {
-						id
-						name
-					}
-				}
-			}
 		}
 	`)
+
+	// allStripeProduct(filter: { active: { eq: true } }) {
+	// 	edges {
+	// 		node {
+	// 			id
+	// 			name
+	// 		}
+	// 	}
+	// }
 
 	// Check for query errors
 	if (result.errors) {
@@ -38,7 +39,8 @@ exports.createPages = async ({ graphql, actions }) => {
 	}
 
 	// Extract data from query results
-	const { allMarkdownRemark, allStripeProduct } = result.data
+	const { allMarkdownRemark } = result.data
+	// allStripeProduct
 
 	const postTemplate = path.resolve(`./src/templates/post.tsx`)
 	allMarkdownRemark.edges.forEach(({ node }) => {
@@ -50,17 +52,17 @@ exports.createPages = async ({ graphql, actions }) => {
 		}
 	})
 
-	const productTemplate = path.resolve(`./src/templates/product.tsx`)
-	allStripeProduct.edges.forEach(({ node }) => {
-		const newPath = `/product/${node.name
-			.toLowerCase()
-			.split(` `)
-			.join(`-`)}`
+	// const productTemplate = path.resolve(`./src/templates/product.tsx`)
+	// allStripeProduct.edges.forEach(({ node }) => {
+	// 	const newPath = `/product/${node.name
+	// 		.toLowerCase()
+	// 		.split(` `)
+	// 		.join(`-`)}`
 
-		createPage({
-			component: productTemplate,
-			context: { productID: node.id },
-			path: newPath,
-		})
-	})
+	// 	createPage({
+	// 		component: productTemplate,
+	// 		context: { productID: node.id },
+	// 		path: newPath,
+	// 	})
+	// })
 }

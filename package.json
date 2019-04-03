@@ -1,5 +1,5 @@
 {
-	"name": "plantvine.netlify.com",
+	"name": "wmi.io",
 	"private": true,
 	"description": "Interior & exterior plants, tropicals, fruit trees, exotics, bromeliads, palms and more. All from the source. Order online or call us at 888-361-9998.",
 	"version": "0.1.0",
@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/dylantackoor/plantvine.com"
+		"url": "https://github.com/dylantackoor/wmi.io.com"
 	},
 	"engines": {
 		"node": ">=10.13.0",
@@ -33,7 +33,6 @@
 		"@emotion/styled": "^10.0.7",
 		"@types/dinero.js": "^1.4.0",
 		"babel-preset-gatsby": "^0.1.8",
-		"dinero.js": "^1.6.0",
 		"emotion-normalize": "^10.0.0",
 		"eslint-config-prettier": "^4.1.0",
 		"eslint-plugin-prettier": "^3.0.1",
@@ -55,7 +54,6 @@
 		"gatsby-plugin-react-helmet": "^3.0.7",
 		"gatsby-plugin-sharp": "^2.0.32",
 		"gatsby-plugin-sitemap": "^2.0.6",
-		"gatsby-plugin-stripe": "^1.2.0",
 		"gatsby-plugin-tslint": "0.0.2",
 		"gatsby-plugin-typescript": "^2.0.10",
 		"gatsby-plugin-web-font-loader": "^1.0.4",
@@ -64,7 +62,6 @@
 		"gatsby-plugin-zopfli": "^1.0.4",
 		"gatsby-remark-images": "^3.0.9",
 		"gatsby-source-filesystem": "^2.0.23",
-		"gatsby-source-stripe": "^2.1.9",
 		"gatsby-transformer-remark": "^2.3.2",
 		"gatsby-transformer-sharp": "^2.1.15",
 		"netlify-cms": "^2.9.0",

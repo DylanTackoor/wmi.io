@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby'
-import { IPost } from 'plant-vine'
 import React, { FunctionComponent } from 'react'
+import { IPost } from 'wmi'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 

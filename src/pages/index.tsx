@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React, { FunctionComponent } from 'react'
-import { PlantVineLD } from '../components/JSON-LD'
+import { WorldmediaLD } from '../components/JSON-LD'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 
@@ -22,7 +22,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = props => {
 	return (
 		<Layout>
 			<SEO />
-			<PlantVineLD />
+			<WorldmediaLD />
 			<h1>{title}</h1>
 			<p>{description}</p>
 		</Layout>

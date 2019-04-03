@@ -1,78 +1,69 @@
-// tslint:disable: object-literal-sort-keys
-
+import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 
-const facebookLogo: string = require('../images/footer/facebook.svg')
-const pinterestLogo: string = require('../images/footer/pinterest.svg')
+// Elements
+const FooterContainer = styled('footer')`
+	background-color: #23282d;
+	color: #a8a6aa;
+`
 
-export const Footer: FunctionComponent = () => {
-	const menus = [
-		{
-			title: 'PLANTVINE',
-			links: [
-				{ title: 'About Us', path: '/about-us' },
-				{ title: 'Shop Plants', path: '/shop' },
-				{ title: 'Blog', path: '/blog' },
-				{ title: 'Contact Us', path: '/contact-us' },
-				{ title: 'FAQ', path: '/answers-to-your-questions' },
-			],
-		},
-		{
-			title: 'ORDERS',
-			links: [
-				{ title: '30 Day Guarantee', path: '/30-day-guarantee' },
-				{ title: 'Order Tracking', path: '/order-tracking' },
-				{ title: 'My Account', path: '/my-account' },
-				{ title: 'Shipping Plants', path: '/shipping-plants' },
-				{ title: 'Return Policy', path: '/return-policy' },
-			],
-		},
-		{
-			title: 'THE FINE PRINT',
-			links: [
-				{ title: 'Privacy Policy', path: '/privacy-policy' },
-				{ title: 'Terms of Service', path: '/terms-of-service' },
-			],
-		},
-	]
-
-	// Load
-	return (
-		<footer>
-			<ul>
-				{menus.map(menu => (
-					<li key={menu.title}>
-						<p>{menu.title}</p>
-						<ul>
-							{menu.links.map(link => (
-								<li key={link.title}>
-									<Link to={link.path}>{link.title}</Link>
-								</li>
-							))}
-						</ul>
-					</li>
-				))}
-			</ul>
-
+export const Footer: FunctionComponent = () => (
+	<FooterContainer>
+		{/* Top half */}
+		<div>
 			<div>
-				<a
-					href='https://www.facebook.com/PlantVineCo'
-					target='_blank'
-					rel='noopener'
-				>
-					<img src={facebookLogo} alt='Facebook' />
-				</a>
-				<a
-					href='https://www.pinterest.com/plantvineco/'
-					target='_blank'
-					rel='noopener'
-				>
-					<img src={pinterestLogo} alt='Pinterest' />
-				</a>
+				<p>HEADQUARTERS</p>
+				<p>
+					3401 N. Miami Avenue
+					<br />
+					Suite 239
+					<br />
+					Miami, Florida 33127
+					<br />
+					USA
+				</p>
+			</div>
+			<div>
+				<p>CONTACT US</p>
+				<Link to='/offices#miami'>Miami Office</Link>
+				<br />
+				<Link to='/offices#honolulu'>Honolulu Office</Link>
+				<br />
+				<Link to='/offices#los-angeles'>Los Angeles Office</Link>
+			</div>
+			<div>
+				<p>MESSAGE US</p>
+				<p>
+					Do you have a question, an idea to run by us, or simply want to know
+					more about us?
+				</p>
+				<p>
+					<Link to='/contact'>Start Your Message</Link>
+				</p>
 			</div>
 
-			<p>&copy; 2018 plantVine</p>
-		</footer>
-	)
-}
+			{/* Bottom Half */}
+			<div>
+				{/* Legal Links */}
+				<div>
+					<p>© 2019 Worldmedia Interactive.</p>
+					<p>
+						{/* TODO: Don't hardcode these links */}
+						<Link to='/terms'>Terms &amp; Conditions</Link> |{' '}
+						<Link to='/privacy'>Privacy Policy</Link>
+					</p>
+				</div>
+
+				{/* Social media */}
+				<div>
+					{/* TODO: replace with OutboundLink */}
+					<a href='/'>Twitter</a>
+					<a href='/'>Facebook</a>
+					<a href='/'>LinkedIn</a>
+					<a href='/'>Instagram</a>
+				</div>
+			</div>
+		</div>
+	</FooterContainer>
+)
