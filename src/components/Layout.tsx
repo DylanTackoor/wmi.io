@@ -79,16 +79,6 @@ export const Layout: FunctionComponent = props => (
 		<Global
 			styles={css`
 				${emotionNormalize}
-
-				.wf-active p,
-				.wf-active h1,
-				.wf-active h2,
-				.wf-active h3,
-				.wf-active h4,
-				.wf-active h5,
-				.wf-active h6 {
-					font-family: 'Dosis', sans-serif;
-				}
 			`}
 		/>
 

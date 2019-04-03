@@ -49,9 +49,6 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 					name: 'p:domain_verify',
 				},
 			]}
-		>
-			<link rel='profile' href='https://gmpg.org/xfn/11' />
-			<link rel='pingback' href='https://www.plantvine.com/xmlrpc.php' />
-		</Helmet>
+		/>
 	)
 }

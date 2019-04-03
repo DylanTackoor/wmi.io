@@ -1,5 +1,5 @@
 {
-	"name": "plantvine.netlify.com",
+	"name": "wmi.io",
 	"private": true,
 	"description": "Interior & exterior plants, tropicals, fruit trees, exotics, bromeliads, palms and more. All from the source. Order online or call us at 888-361-9998.",
 	"version": "0.1.0",
@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/dylantackoor/plantvine.com"
+		"url": "https://github.com/dylantackoor/wmi.io.com"
 	},
 	"engines": {
 		"node": ">=10.13.0",

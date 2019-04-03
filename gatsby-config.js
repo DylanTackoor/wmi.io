@@ -9,10 +9,10 @@ const netlifyCmsPaths = {
 
 const gatsbyConfig = {
 	siteMetadata: {
-		title: `PlantVine`,
-		description: `Interior & exterior plants, tropicals, fruit trees, exotics, bromeliads, palms and more. All from the source. Order online or call us at 888-361-9998.`,
-		author: `@plantvine`,
-		siteUrl: `https://plantvine.netlify.com`,
+		title: `Worldmedia Interactive`,
+		description: `Full Service Advertising &amp; Marketing Agency offering SEM, SEO, Display, Social &amp; Traditional Media Services in Miami, Toronto, Hawaii, Orlando and L.A.`,
+		author: `Dylan Tackoor`,
+		siteUrl: `https://wmi.io`,
 	},
 	plugins: [
 		// Utilize undocumented Netlify build server cache
@@ -27,21 +27,21 @@ const gatsbyConfig = {
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-tslint`,
 
-		{
-			resolve: `gatsby-source-stripe`,
-			options: {
-				objects: [`Product`, `Sku`],
-				// TODO: reset this read only dev key and tie to env var later
-				secretKey: `rk_test_6MzwVtWMTn13SWMkNtJ1irRl`,
-				downloadFiles: true,
-			},
-		},
-		{
-			resolve: `gatsby-plugin-stripe`,
-			options: {
-				async: true,
-			},
-		},
+		// {
+		// 	resolve: `gatsby-source-stripe`,
+		// 	options: {
+		// 		objects: [`Product`, `Sku`],
+		// 		// TODO: reset this read only dev key and tie to env var later
+		// 		secretKey: `rk_test_6MzwVtWMTn13SWMkNtJ1irRl`,
+		// 		downloadFiles: true,
+		// 	},
+		// },
+		// {
+		// 	resolve: `gatsby-plugin-stripe`,
+		// 	options: {
+		// 		async: true,
+		// 	},
+		// },
 
 		// Image optimizations for GraphQL queries
 		`gatsby-transformer-sharp`,
@@ -73,7 +73,7 @@ const gatsbyConfig = {
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
 				enableIdentityWidget: true,
-				htmlTitle: `PlantVine CMS`,
+				htmlTitle: `WMi CMS`,
 			},
 		},
 		{
@@ -123,11 +123,11 @@ const gatsbyConfig = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `PlantVine`,
-				short_name: `PlantVine`,
+				name: `Worldmedia Interactive`,
+				short_name: `WMi`,
 				start_url: `/`,
-				background_color: `#b4dca0`,
-				theme_color: `#b4dca0`,
+				background_color: `#EC008C`,
+				theme_color: `#EC008C`,
 				display: `standalone`,
 				icon: `src/images/icon.png`,
 				theme_color_in_head: true,
@@ -143,7 +143,7 @@ const gatsbyConfig = {
 			resolve: `gatsby-plugin-web-font-loader`,
 			options: {
 				google: {
-					families: [`Dosis`],
+					families: [`Montserrat`, `Roboto+Slab`],
 				},
 			},
 		},
@@ -153,7 +153,7 @@ const gatsbyConfig = {
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
-				siteUrl: `https://plantvine.netlify.com`,
+				siteUrl: `https://wmi.io`,
 			},
 		},
 

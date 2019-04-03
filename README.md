@@ -1,8 +1,6 @@
 # dylantackoor.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cfc03791-81d9-4930-8fa9-d72f28bee506/deploy-status)](https://app.netlify.com/sites/plantvine/deploys)
-
-I'm making a _really fast_ site with TypeScript, React, Gatsby, Netlify, and a headless WordPress CMS.
+Prototype site for the agency I'm working at
 
 ## 🧐 What's inside?
 

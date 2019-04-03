@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Organization } from 'schema-dts'
 
 /** FIX: image URL */
-export const PlantVineLD: FunctionComponent = () => {
+export const WorldmediaLD: FunctionComponent = () => {
 	const { site } = useStaticQuery(
 		graphql`
 			query {
@@ -21,7 +21,7 @@ export const PlantVineLD: FunctionComponent = () => {
 	const title: string = site.siteMetadata.title
 	const description: string = site.siteMetadata.description
 
-	const PlantVine: Organization & { '@context': 'http://schema.org' } = {
+	const Worldmedia: Organization & { '@context': 'http://schema.org' } = {
 		'@context': 'http://schema.org',
 		'@type': 'Store',
 		description,
@@ -33,7 +33,7 @@ export const PlantVineLD: FunctionComponent = () => {
 
 	return (
 		<Helmet>
-			<script type='application/ld+json'>{JSON.stringify(PlantVine)}</script>
+			<script type='application/ld+json'>{JSON.stringify(Worldmedia)}</script>
 		</Helmet>
 	)
 }
