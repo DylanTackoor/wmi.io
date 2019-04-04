@@ -51,12 +51,21 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
 
-			<meta name='twitter:card' content='summary_large_image' />
-			<meta name='twitter:description' content={description} />
+			{/* <meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:title' content={title} />
+			<meta name='twitter:description' content={description} />
 			<meta name='twitter:image' content={graphImg} />
-			<meta name='twitter:site' content='@worldmediamiami' />
 			<meta name='twitter:image:alt' content={title} />
+			<meta name='twitter:site' content='@worldmediamiami' />
+			<meta name='twitter:creator' content='@dylantackoor' /> */}
+
+			<meta name='twitter:card' content='summary_large_image' />
+			<meta name='twitter:url' content={siteMetadata.siteUrl} />
+			<meta name='twitter:title' content={title} />
+			<meta name='twitter:description' content={description} />
+			<meta name='twitter:image' content={graphImg} />
+			<meta name='twitter:image:alt' content={title} />
+			<meta name='twitter:site' content='@worldmediamiami' />
 			<meta name='twitter:creator' content='@dylantackoor' />
 		</Helmet>
 	)
