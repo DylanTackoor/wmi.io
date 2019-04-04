@@ -37,20 +37,9 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 		: siteMetadata.description
 
 	return (
-		<Helmet
-			htmlAttributes={{ lang: 'en' || props.lang }}
-			title={title}
-			meta={[
-				{
-					content: description,
-					name: `description`,
-				},
-				{
-					content: 'TODO:',
-					name: 'p:domain_verify',
-				},
-			]}
-		>
+		<Helmet htmlAttributes={{ lang: 'en' || props.lang }} title={title}>
+			<meta name='description' content={description} />
+
 			<meta property='og:locale' content='en_US' />
 			<meta property='og:type' content='website' />
 			<meta property='og:title' content={title} />
