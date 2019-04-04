@@ -15,33 +15,9 @@ const gatsbyConfig = {
 		siteUrl: `https://wmi.io`,
 	},
 	plugins: [
-		// Utilize undocumented Netlify build server cache
-		{
-			resolve: `gatsby-plugin-netlify-cache`,
-			// options: {
-			// 	extraDirsToCache: ["extraDir", ".extraDotDir", "extra/dir"],
-			// },
-		},
-
 		// Type safety
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-tslint`,
-
-		// {
-		// 	resolve: `gatsby-source-stripe`,
-		// 	options: {
-		// 		objects: [`Product`, `Sku`],
-		// 		// TODO: reset this read only dev key and tie to env var later
-		// 		secretKey: `rk_test_6MzwVtWMTn13SWMkNtJ1irRl`,
-		// 		downloadFiles: true,
-		// 	},
-		// },
-		// {
-		// 	resolve: `gatsby-plugin-stripe`,
-		// 	options: {
-		// 		async: true,
-		// 	},
-		// },
 
 		// Image optimizations for GraphQL queries
 		`gatsby-transformer-sharp`,
@@ -70,22 +46,6 @@ const gatsbyConfig = {
 		},
 
 		{
-			resolve: `gatsby-plugin-netlify-cms`,
-			options: {
-				enableIdentityWidget: true,
-				htmlTitle: `WMi CMS`,
-			},
-		},
-
-		// {
-		// 	resolve: `gatsby-plugin-netlify-functions`,
-		// 	options: {
-		// 		functionsSrc: `${__dirname}/src/api`,
-		// 		functionsOutput: `${__dirname}/functions`,
-		// 	},
-		// },
-
-		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
@@ -101,7 +61,7 @@ const gatsbyConfig = {
 				name: `markdown-pages`,
 			},
 		},
-		`gatsby-transformer-remark`,
+		// `gatsby-transformer-remark`,
 
 		// Create compnents & styling together
 		{
@@ -110,6 +70,9 @@ const gatsbyConfig = {
 				// Accepts all options defined by `babel-plugin-emotion` plugin.
 			},
 		},
+
+		// Sets elements in <head>
+		`gatsby-plugin-react-helmet`,
 
 		// TODO: pregenerate these images
 		{
@@ -127,8 +90,14 @@ const gatsbyConfig = {
 			},
 		},
 
-		// Sets elements in <head>
-		`gatsby-plugin-react-helmet`,
+		// Adds canonical URLs
+		// https://en.wikipedia.org/wiki/Canonical_link_element
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
+			options: {
+				siteUrl: `https://wmi.io`,
+			},
+		},
 
 		// Async load fonts
 		{
@@ -137,15 +106,6 @@ const gatsbyConfig = {
 				google: {
 					families: [`Montserrat`, `Roboto+Slab`],
 				},
-			},
-		},
-
-		// Adds canonical URLs
-		// https://en.wikipedia.org/wiki/Canonical_link_element
-		{
-			resolve: `gatsby-plugin-canonical-urls`,
-			options: {
-				siteUrl: `https://wmi.io`,
 			},
 		},
 
@@ -231,13 +191,37 @@ const gatsbyConfig = {
 		// 	},
 		// },
 
-		// Logs sizes of compiled assets
 		{
-			resolve: `gatsby-plugin-webpack-size`,
+			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
-				development: true,
+				enableIdentityWidget: true,
+				htmlTitle: `WMi CMS`,
 			},
 		},
+
+		{
+			resolve: `gatsby-plugin-netlify`,
+			options: {
+				headers: {
+					'/*': [`Dylan: was here`],
+				},
+			},
+		},
+
+		// Ensures Gatsby catches all links for optimization
+		`gatsby-plugin-catch-links`,
+
+		// File compression
+		`gatsby-plugin-zopfli`,
+		`gatsby-plugin-brotli`,
+
+		// // Logs sizes of compiled assets
+		// {
+		// 	resolve: `gatsby-plugin-webpack-size`,
+		// 	options: {
+		// 		development: false,
+		// 	},
+		// },
 
 		// Generates site to visualize site dependencies
 		{
@@ -249,14 +233,13 @@ const gatsbyConfig = {
 			},
 		},
 
-		// File compression
-		`gatsby-plugin-zopfli`,
-		`gatsby-plugin-brotli`,
-
-		// Ensures Gatsby catches all links for optimization
-		`gatsby-plugin-catch-links`,
-
-		`gatsby-plugin-netlify`,
+		// Utilize undocumented Netlify build server cache
+		{
+			resolve: `gatsby-plugin-netlify-cache`,
+			// options: {
+			// 	extraDirsToCache: ["extraDir", ".extraDotDir", "extra/dir"],
+			// },
+		},
 	],
 }
 
