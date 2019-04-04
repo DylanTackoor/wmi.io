@@ -63,10 +63,12 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 			<meta name='twitter:url' content={siteMetadata.siteUrl} />
 			<meta name='twitter:title' content={title} />
 			<meta name='twitter:description' content={description} />
-			<meta name='twitter:image' content={graphImg} />
-			<meta name='twitter:image:alt' content={title} />
 			<meta name='twitter:site' content='@worldmediamiami' />
 			<meta name='twitter:creator' content='@dylantackoor' />
+			<meta name='twitter:image:src' content={graphImg} />
+			<meta name='twitter:image:alt' content={title} />
+			<meta name='twitter:image:width' content='1200' />
+			<meta name='twitter:image:height' content='630' />
 		</Helmet>
 	)
 }
