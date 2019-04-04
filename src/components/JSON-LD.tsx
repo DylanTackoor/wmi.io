@@ -3,6 +3,8 @@ import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import { Organization } from 'schema-dts'
 
+const graphImg = require('../images/opengraph.png')
+
 /** FIX: image URL */
 export const WorldmediaLD: FunctionComponent = () => {
 	const { site } = useStaticQuery(
@@ -25,7 +27,7 @@ export const WorldmediaLD: FunctionComponent = () => {
 		'@context': 'http://schema.org',
 		'@type': 'Store',
 		description,
-		image: 'https://www.plantvine.com/plants/2017/06/plantvine-logo.png',
+		image: graphImg,
 		name: title,
 		openingHours: 'Mo-Fr 09:00-16:30',
 		telephone: '888-361-9998',
