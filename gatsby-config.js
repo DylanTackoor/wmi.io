@@ -76,13 +76,14 @@ const gatsbyConfig = {
 				htmlTitle: `WMi CMS`,
 			},
 		},
-		{
-			resolve: `gatsby-plugin-netlify-functions`,
-			options: {
-				functionsSrc: `${__dirname}/src/api`,
-				functionsOutput: `${__dirname}/functions`,
-			},
-		},
+
+		// {
+		// 	resolve: `gatsby-plugin-netlify-functions`,
+		// 	options: {
+		// 		functionsSrc: `${__dirname}/src/api`,
+		// 		functionsOutput: `${__dirname}/functions`,
+		// 	},
+		// },
 
 		{
 			resolve: `gatsby-source-filesystem`,

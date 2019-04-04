@@ -1,8 +1,8 @@
 import { APIGatewayProxyHandler } from 'aws-lambda'
 
 const helloWorld: APIGatewayProxyHandler = async event => {
-	const subject = `World`
-	// event.queryStringParameters.name
+	const { queryStringParameters } = event
+	const subject = queryStringParameters ? queryStringParameters.name : `World`
 
 	return {
 		body: `Hello ${subject}!!!`,
