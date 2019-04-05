@@ -32,6 +32,8 @@ export const WorldmediaLD: FunctionComponent = () => {
 		postalCode: '33127',
 		streetAddress: '3401 N Miami Ave #239',
 	}
+
+	// TODO: swap from Organization to Brand
 	const brands: Array<Organization & { '@context': 'https://schema.org' }> = [
 		{
 			'@context': 'https://schema.org',
@@ -180,9 +182,9 @@ export const WorldmediaLD: FunctionComponent = () => {
 		sameAs: [
 			'https://www.facebook.com/WorldmediaInteractive',
 			'https://twitter.com/worldmediamiami',
-			'https://www.instagram.com/worldmedia_interactive',
-			'https://www.youtube.com/user/WorldmediaMiami',
+			'https://www.instagram.com/worldmedia_interactive/',
 			'https://www.linkedin.com/company/worldmedia-interactive',
+			'https://www.youtube.com/user/WorldmediaMiami',
 		],
 		brand: brands,
 		// foundingDate: '',
