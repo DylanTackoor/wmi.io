@@ -49,8 +49,11 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 			<meta property='og:site_name' content={title} />
 			<meta property='og:image' content={graphImgURL} />
 			<meta property='og:image:secure_url' content={graphImgURL} />
+			<meta property='og:image:alt' content='Worldmedia Interactive Logo' />
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
+
+			<meta property='fb:app_id' content='106117212800631' />
 
 			<meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:url' content={siteMetadata.siteUrl} />
