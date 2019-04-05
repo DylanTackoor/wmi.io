@@ -10,7 +10,7 @@ interface ISeoConfig {
 	meta?: any
 	keywords?: string[]
 	title?: string
-	siteUrl: string
+	siteUrl?: string
 }
 
 export const SEO: FunctionComponent<ISeoConfig> = props => {

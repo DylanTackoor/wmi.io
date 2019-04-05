@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { Organization } from 'schema-dts'
+import { Organization, PostalAddress } from 'schema-dts'
 
 const graphImg = require('../images/opengraph.png')
 
@@ -14,6 +14,7 @@ export const WorldmediaLD: FunctionComponent = () => {
 					siteMetadata {
 						title
 						description
+						siteUrl
 					}
 				}
 			}
@@ -21,16 +22,158 @@ export const WorldmediaLD: FunctionComponent = () => {
 	)
 
 	const title: string = site.siteMetadata.title
+	const siteUrl: string = site.siteMetadata.siteUrl
 	const description: string = site.siteMetadata.description
+	const address: PostalAddress = {
+		'@type': 'PostalAddress',
+		addressCountry: 'USA',
+		addressLocality: 'Miami',
+		addressRegion: 'FL',
+		postalCode: '33127',
+		streetAddress: '3401 N Miami Ave #239',
+	}
+	const brands: Array<Organization & { '@context': 'https://schema.org' }> = [
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Alamo',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Latam',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Enterprise',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'National',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Air Canada',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Resorts World Bimini',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Resorts Karisma Hotels & Resorts',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Toronto Escapes',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Norwegian Cruise Line',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'MSC Cruises',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Club Premier',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'South African Airways',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'South Bahamas Paradise Cruise Line',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Cayman Islands Yellow Pages',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Woodspring Hotels',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Meliã Hotels & Resorts',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'CopaAirlines',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Crystal Cruises',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'AeroMexico',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Polynesian Cultural Center',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Children\'s Cancer Caring Center',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Girl Scouts of Hawaii',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'SelectQuote',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'MidiCi',
+		},
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Organization',
+			name: 'Alert Alarm',
+		},
+	]
 
-	const Worldmedia: Organization & { '@context': 'http://schema.org' } = {
-		'@context': 'http://schema.org',
-		'@type': 'Store',
+	const Worldmedia: Organization & { '@context': 'https://schema.org' } = {
+		'@context': 'https://schema.org',
+		'@type': 'Organization',
 		description,
-		image: graphImg,
+		image: `${siteUrl}${graphImg}`,
 		name: title,
-		openingHours: 'Mo-Fr 09:00-16:30',
+		email: `hello@worldmedia.net`,
 		telephone: '888-361-9998',
+		address,
+		url: siteUrl,
+		brand: brands,
+		award: ['Gold Magellan x2'],
+		// foundingDate: '',
+		// foundingLocation: address,
 	}
 
 	return (
