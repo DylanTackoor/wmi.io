@@ -15,12 +15,14 @@ export const WorldmediaLD: FunctionComponent = () => {
 						title
 						description
 						siteUrl
+						phoneNumber
 					}
 				}
 			}
 		`
 	)
 
+	const phoneNumber: string = site.siteMetadata.phoneNumber
 	const title: string = site.siteMetadata.title
 	const siteUrl: string = site.siteMetadata.siteUrl
 	const description: string = site.siteMetadata.description
@@ -169,14 +171,14 @@ export const WorldmediaLD: FunctionComponent = () => {
 		image: `${siteUrl}${graphImg}`,
 		name: title,
 		email: `hello@worldmedia.net`,
-		telephone: '305-572-0404',
+		telephone: phoneNumber,
 		address,
 		url: siteUrl,
 		award: ['Gold Magellan x2'],
 		contactPoint: {
 			'@type': 'ContactPoint',
 			contactType: 'sales',
-			telephone: '+1305-572-0404',
+			telephone: phoneNumber,
 			url: 'https://www.worldmedia.net/contact/message-us',
 		},
 		sameAs: [
