@@ -2,6 +2,9 @@
 
 const path = require(`path`)
 
+// TODO: pull from CMS
+const blogPathPath = `/blog/`
+
 exports.createPages = async ({ graphql, actions }) => {
 	// Expose Gatsby APIs
 	const { createPage } = actions
@@ -46,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
 	allMarkdownRemark.edges.forEach(({ node }) => {
 		if (node.fileAbsolutePath.includes(`/src/posts/`)) {
 			createPage({
-				path: node.frontmatter.path,
+				path: `${blogPathPath}${node.frontmatter.slug}`,
 				component: postTemplate,
 			})
 		}
