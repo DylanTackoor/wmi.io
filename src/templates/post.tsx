@@ -29,12 +29,11 @@ const PostTemplate: FunctionComponent<IPostTemplateQuery> = props => {
 export default PostTemplate
 
 export const pageQuery = graphql`
-	query($path: String!) {
-		markdownRemark(frontmatter: { path: { eq: $path } }) {
+	query($slug: String!) {
+		markdownRemark(frontmatter: { slug: { eq: $slug } }) {
 			html
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")
-				path
 				title
 			}
 		}

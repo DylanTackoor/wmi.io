@@ -14,6 +14,7 @@ const gatsbyConfig = {
 		author: `Dylan Tackoor`,
 		siteUrl: `https://wmi.io`,
 		phoneNumber: `+1305-572-0404`,
+		blogPathPath: `/blog/`,
 	},
 	plugins: [
 		// Type safety

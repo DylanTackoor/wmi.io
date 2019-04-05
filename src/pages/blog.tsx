@@ -6,6 +6,11 @@ import { SEO } from '../components/SEO'
 
 export interface IBlogPage {
 	data: {
+		site: {
+			siteMetadata: {
+				blogPathPath: string
+			}
+		}
 		posts: {
 			edges: Array<{
 				node: IPost
@@ -22,7 +27,13 @@ const BlogPage: FunctionComponent<IBlogPage> = props => (
 			{props.data.posts.edges.map(({ node }) => (
 				<li>
 					<p>{node.frontmatter.date}</p>
-					<Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
+					<Link
+						to={`${props.data.site.siteMetadata.blogPathPath}${
+							node.frontmatter.slug
+						}`}
+					>
+						{node.frontmatter.title}
+					</Link>
 				</li>
 			))}
 		</ul>
@@ -33,6 +44,11 @@ export default BlogPage
 
 export const pageQuery = graphql`
 	query {
+		site {
+			siteMetadata {
+				blogPathPath
+			}
+		}
 		posts: allMarkdownRemark(
 			filter: { fileAbsolutePath: { regex: "/src/posts/" } }
 			sort: { order: DESC, fields: [frontmatter___date] }
@@ -42,7 +58,7 @@ export const pageQuery = graphql`
 					html
 					frontmatter {
 						date(formatString: "MMMM Do, YYYY")
-						path
+						slug
 						title
 					}
 				}

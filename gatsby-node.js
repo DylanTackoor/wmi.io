@@ -2,9 +2,6 @@
 
 const path = require(`path`)
 
-// TODO: pull from CMS
-const blogPathPath = `/blog/`
-
 exports.createPages = async ({ graphql, actions }) => {
 	// Expose Gatsby APIs
 	const { createPage } = actions
@@ -12,6 +9,11 @@ exports.createPages = async ({ graphql, actions }) => {
 	// Query for data
 	const result = await graphql(`
 		{
+			site {
+				siteMetadata {
+					blogPathPath
+				}
+			}
 			allMarkdownRemark(
 				filter: { fileAbsolutePath: { regex: "/src/posts/" } }
 			) {
@@ -19,7 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
 					node {
 						fileAbsolutePath
 						frontmatter {
-							path
+							slug
 						}
 					}
 				}
@@ -27,45 +29,23 @@ exports.createPages = async ({ graphql, actions }) => {
 		}
 	`)
 
-	// allStripeProduct(filter: { active: { eq: true } }) {
-	// 	edges {
-	// 		node {
-	// 			id
-	// 			name
-	// 		}
-	// 	}
-	// }
-
 	// Check for query errors
 	if (result.errors) {
 		throw new Error(result.errors)
 	}
 
 	// Extract data from query results
-	const { allMarkdownRemark } = result.data
-	// allStripeProduct
+	const { site, allMarkdownRemark } = result.data
+	const { blogPathPath } = site.siteMetadata
 
 	const postTemplate = path.resolve(`./src/templates/post.tsx`)
 	allMarkdownRemark.edges.forEach(({ node }) => {
 		if (node.fileAbsolutePath.includes(`/src/posts/`)) {
 			createPage({
 				path: `${blogPathPath}${node.frontmatter.slug}`,
+				context: { slug: node.frontmatter.slug },
 				component: postTemplate,
 			})
 		}
 	})
-
-	// const productTemplate = path.resolve(`./src/templates/product.tsx`)
-	// allStripeProduct.edges.forEach(({ node }) => {
-	// 	const newPath = `/product/${node.name
-	// 		.toLowerCase()
-	// 		.split(` `)
-	// 		.join(`-`)}`
-
-	// 	createPage({
-	// 		component: productTemplate,
-	// 		context: { productID: node.id },
-	// 		path: newPath,
-	// 	})
-	// })
 }

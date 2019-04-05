@@ -3,7 +3,7 @@ export interface IPost {
 	html: string
 	frontmatter: {
 		date: string
-		path: string
+		slug: string
 		title: string
 	}
 }
