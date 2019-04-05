@@ -16,7 +16,7 @@ collections:
     folder: src/posts
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: path, label: Path } # TODO: change to slug
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }

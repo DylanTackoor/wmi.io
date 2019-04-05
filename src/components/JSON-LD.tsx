@@ -5,7 +5,6 @@ import { Organization, PostalAddress } from 'schema-dts'
 
 const graphImg = require('../images/opengraph.png')
 
-/** FIX: image URL */
 export const WorldmediaLD: FunctionComponent = () => {
 	const { site } = useStaticQuery(
 		graphql`
