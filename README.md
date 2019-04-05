@@ -1,6 +1,12 @@
 # wmi.com
 
-Prototype site for the agency I'm working at
+Prototype site for the agency I'm working at.
+
+Review with the following tools:
+
+- [Google Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool#url=https%3A%2F%2Fwmi.io)
+- [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+- [Facebook OpenGraph Debugger](https://developers.facebook.com/tools/debug/sharing/?q=https%3A%2F%2Fwmi.io%2F)
 
 ## 🧐 What's inside?
 
