@@ -55,6 +55,7 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 
 			<meta property='fb:app_id' content='106117212800631' />
 
+			{/* TODO: figure out which tags can be replaced with ^ og:tags */}
 			<meta name='twitter:card' content='summary_large_image' />
 			<meta name='twitter:url' content={siteMetadata.siteUrl} />
 			<meta name='twitter:title' content={title} />
