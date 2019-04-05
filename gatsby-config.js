@@ -24,6 +24,28 @@ const gatsbyConfig = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 
+		{
+			resolve: `gatsby-plugin-netlify-cms`,
+			options: {
+				modulePath: `${__dirname}/src/cms/cms.ts`,
+				enableIdentityWidget: true,
+				publicPath: `/admin`,
+				htmlTitle: `WMi CMS`,
+			},
+		},
+
+		{
+			resolve: `gatsby-plugin-netlify`,
+			options: {
+				headers: {
+					'/*': [`Dylan: was here`],
+				},
+			},
+		},
+
+		// Ensures Gatsby catches all links for optimization
+		`gatsby-plugin-catch-links`,
+
 		// Including in your Gatsby plugins will transform any paths in your frontmatter
 		netlifyCmsPaths,
 		{
@@ -191,26 +213,6 @@ const gatsbyConfig = {
 		// 		cookieDomain: `example.com`,
 		// 	},
 		// },
-
-		{
-			resolve: `gatsby-plugin-netlify-cms`,
-			options: {
-				enableIdentityWidget: true,
-				htmlTitle: `WMi CMS`,
-			},
-		},
-
-		{
-			resolve: `gatsby-plugin-netlify`,
-			options: {
-				headers: {
-					'/*': [`Dylan: was here`],
-				},
-			},
-		},
-
-		// Ensures Gatsby catches all links for optimization
-		`gatsby-plugin-catch-links`,
 
 		// File compression
 		`gatsby-plugin-zopfli`,

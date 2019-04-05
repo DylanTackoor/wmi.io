@@ -53,7 +53,8 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
 
-			<meta property='fb:app_id' content='106117212800631' />
+			{/* FIX: Facebook ownership tag */}
+			{/* <meta property='fb:app_id' content='106117212800631' /> */}
 
 			{/* TODO: figure out which tags can be replaced with ^ og:tags */}
 			<meta name='twitter:card' content='summary_large_image' />
