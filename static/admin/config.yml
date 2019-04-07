@@ -103,3 +103,15 @@ collections:
                     widget: 'date'
                     default: ''
                     format: 'MMM Do YY'
+
+  - label: 'Settings'
+    name: 'settings'
+    description: Site-wide settings
+    files:
+      - label: 'About'
+        name: 'about'
+        file: 'src/cms/content/settings.json'
+        fields:
+          - label: "Google Analytics Key"
+              name: googleAnalyticsKey
+              widget: string
