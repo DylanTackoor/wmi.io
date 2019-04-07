@@ -58,16 +58,28 @@ export const Footer: FunctionComponent = () => (
 
 				{/* Social media */}
 				<div>
-					<OutboundLink href='https://twitter.com/worldmediamiami'>
+					<OutboundLink
+						target='_blank'
+						href='https://twitter.com/worldmediamiami'
+					>
 						Twitter
 					</OutboundLink>
-					<OutboundLink href='https://www.facebook.com/WorldmediaInteractive'>
+					<OutboundLink
+						target='_blank'
+						href='https://www.facebook.com/WorldmediaInteractive'
+					>
 						Facebook
 					</OutboundLink>
-					<OutboundLink href='https://www.linkedin.com/company/worldmedia-interactive'>
+					<OutboundLink
+						target='_blank'
+						href='https://www.linkedin.com/company/worldmedia-interactive'
+					>
 						LinkedIn
 					</OutboundLink>
-					<OutboundLink href='https://www.instagram.com/worldmedia_interactive/'>
+					<OutboundLink
+						target='_blank'
+						href='https://www.instagram.com/worldmedia_interactive/'
+					>
 						Instagram
 					</OutboundLink>
 				</div>
