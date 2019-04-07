@@ -1,6 +1,8 @@
 # wmi.com
 
-Prototype site for the agency I'm working at.
+TODO: Update docs!
+
+Prototype Netlicy CMS based site for the agency I'm working at.
 
 Review with the following tools:
 

@@ -108,6 +108,13 @@ collections:
     name: 'settings'
     description: Various settings across the site
     files:
+      - label: 'Analytics'
+        name: 'analytics'
+        file: 'src/cms/content/analytics.json'
+        fields:
+          - label: 'Google Analytics Key'
+            name: googleAnalyticsKey
+            widget: string
       - label: 'Design'
         name: 'design'
         file: 'src/cms/content/design.json'
@@ -115,11 +122,6 @@ collections:
           - label: 'Theme Color'
             name: themeColor
             widget: string
-            # pattern:
-            #   [
-            #     '/^((0x){0,1}|#{0,1})([0-9A-F]{8}|[0-9A-F]{6})$/gi',
-            #     'Must be a valid hex color.',
-            #   ]
           - label: 'Background Color'
             name: backgroundColor
             widget: string
@@ -128,10 +130,3 @@ collections:
             #     '/^((0x){0,1}|#{0,1})([0-9A-F]{8}|[0-9A-F]{6})$/gi',
             #     'Must be a valid hex color.',
             #   ]
-      - label: 'Analytics'
-        name: 'analytics'
-        file: 'src/cms/content/analytics.json'
-        fields:
-          - label: 'Google Analytics Key'
-            name: googleAnalyticsKey
-            widget: string
