@@ -112,6 +112,6 @@ collections:
         name: 'about'
         file: 'src/cms/content/settings.json'
         fields:
-          - label: "Google Analytics Key"
-              name: googleAnalyticsKey
-              widget: string
+          - label: 'Google Analytics Key'
+            name: googleAnalyticsKey
+            widget: string
