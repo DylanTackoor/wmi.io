@@ -1,3 +1,6 @@
+const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
+// const { googleAnalyticsKey } = require(`./src/cms/content/analytics.json`)
+
 const { NODE_ENV } = process.env
 
 const netlifyCmsPaths = {
@@ -105,8 +108,8 @@ const gatsbyConfig = {
 				name: `Worldmedia Interactive`,
 				short_name: `WMi`,
 				start_url: `/`,
-				background_color: `#EC008C`,
-				theme_color: `#EC008C`,
+				background_color: backgroundColor,
+				theme_color: themeColor,
 				display: `standalone`,
 				icon: `src/images/icon.png`, // TODO: update this image
 				theme_color_in_head: true,
@@ -193,9 +196,9 @@ const gatsbyConfig = {
 		// {
 		// 	resolve: `gatsby-plugin-google-analytics`,
 		// 	options: {
-		// 		trackingId: `YOUR_GOOGLE_ANALYTICS_TRACKING_ID`,
+		// 		trackingId: googleAnalyticsKey,
 		// 		// Puts tracking script in the head instead of the body
-		// 		head: false,
+		// 		head: true,
 		// 		// Setting this parameter is optional
 		// 		anonymize: true,
 		// 		// Setting this parameter is also optional
