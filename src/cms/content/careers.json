@@ -1,46 +1,73 @@
 {
-  "title": "Careers",
-  "intro": "asdf",
-  "departments": [
-    {
-      "department": "Client Services",
-      "careers": [
-        {
-          "title": "Junior Account Executive",
-          "opened": "Apr 7th 19"
-        }
-      ]
-    },
-    {
-      "department": "eCRM",
-      "careers": [
-        {
-          "title": "Email Marketing (eCRM) Specialist",
-          "opened": "Apr 7th 19"
-        }
-      ]
-    },
-    {
-      "department": "SEM",
-      "careers": [
-        {
-          "title": "SEM Specialist",
-          "opened": "Apr 7th 19"
-        },
-        {
-          "title": "Senior SEM Specialist",
-          "opened": "Apr 7th 19"
-        }
-      ]
-    },
-    {
-      "department": "Strategy & Content",
-      "careers": [
-        {
-          "title": "Junior Social Media Specialist",
-          "opened": "Apr 7th 19"
-        }
-      ]
-    }
-  ]
+	"title": "Careers",
+	"intro": "asdf",
+	"departments": [
+		{
+			"department": "Client Services",
+			"careers": [
+				{
+					"title": "Junior Account Executive",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "eCRM",
+			"careers": [
+				{
+					"title": "Email Marketing (eCRM) Specialist",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "SEM",
+			"careers": [
+				{
+					"title": "SEM Specialist",
+					"opened": "Apr 7th 19"
+				},
+				{
+					"title": "Senior SEM Specialist",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "Strategy & Content",
+			"careers": [
+				{
+					"title": "Junior Social Media Specialist",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "Tech",
+			"careers": [
+				{
+					"title": "Senior Front End Developer",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "Trade Desk",
+			"careers": [
+				{
+					"title": "Programmatic Advertising Trader",
+					"opened": "Apr 7th 19"
+				}
+			]
+		},
+		{
+			"department": "Various Departments",
+			"careers": [
+				{
+					"title": "Hiring Multiple Positions",
+					"opened": "Apr 7th 19"
+				}
+			]
+		}
+	]
 }
