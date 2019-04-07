@@ -34,6 +34,23 @@ collections:
     editor:
       preview: false
     files:
+      - label: Blog
+        name: blog
+        file: src/cms/content/blog.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Slug
+            name: slug
+            widget: string
+          - label: Post Count
+            name: postCount
+            widget: 'number'
+            default: 5
+            valueType: 'int'
+            min: 1
+            step: 1
       - label: About
         name: about
         file: src/cms/content/about.json
@@ -171,7 +188,7 @@ collections:
         name: analytics
         file: src/cms/content/analytics.json
         fields:
-          - label: Tracking ID
+          - label: Google Analytics Tracking ID
             name: googleAnalyticsKey
             widget: string
             # pattern: ['/^ua-\d{4,9}-\d{1,4}$/i', 'Google Analytics ID']
