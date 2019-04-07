@@ -89,7 +89,7 @@ collections:
             widget: list
             fields:
               - label: Department
-                name: department
+                name: name
                 widget: string
               - label: Careers
                 name: careers

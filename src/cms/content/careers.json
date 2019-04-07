@@ -3,7 +3,7 @@
 	"intro": "asdf",
 	"departments": [
 		{
-			"department": "Client Services",
+			"name": "Client Services",
 			"careers": [
 				{
 					"title": "Junior Account Executive",
@@ -12,7 +12,7 @@
 			]
 		},
 		{
-			"department": "eCRM",
+			"name": "eCRM",
 			"careers": [
 				{
 					"title": "Email Marketing (eCRM) Specialist",
@@ -21,7 +21,7 @@
 			]
 		},
 		{
-			"department": "SEM",
+			"name": "SEM",
 			"careers": [
 				{
 					"title": "SEM Specialist",
@@ -34,7 +34,7 @@
 			]
 		},
 		{
-			"department": "Strategy & Content",
+			"name": "Strategy & Content",
 			"careers": [
 				{
 					"title": "Junior Social Media Specialist",
@@ -43,7 +43,7 @@
 			]
 		},
 		{
-			"department": "Tech",
+			"name": "Tech",
 			"careers": [
 				{
 					"title": "Senior Front End Developer",
@@ -52,7 +52,7 @@
 			]
 		},
 		{
-			"department": "Trade Desk",
+			"name": "Trade Desk",
 			"careers": [
 				{
 					"title": "Programmatic Advertising Trader",
@@ -61,7 +61,7 @@
 			]
 		},
 		{
-			"department": "Various Departments",
+			"name": "Various Departments",
 			"careers": [
 				{
 					"title": "Hiring Multiple Positions",
