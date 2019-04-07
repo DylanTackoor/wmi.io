@@ -1,16 +1,12 @@
 import { graphql, Link } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import { IPost } from 'wmi'
+import { slug, title } from '../cms/content/blog.json'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 
 export interface IBlogPage {
 	data: {
-		site: {
-			siteMetadata: {
-				blogPathPath: string
-			}
-		}
 		posts: {
 			edges: Array<{
 				node: IPost
@@ -22,16 +18,12 @@ export interface IBlogPage {
 const BlogPage: FunctionComponent<IBlogPage> = props => (
 	<Layout>
 		<SEO title='Blog' />
-		<h1>Blog</h1>
+		<h1>{title}</h1>
 		<ul>
 			{props.data.posts.edges.map(({ node }) => (
 				<li>
 					<p>{node.frontmatter.date}</p>
-					<Link
-						to={`${props.data.site.siteMetadata.blogPathPath}${
-							node.frontmatter.slug
-						}`}
-					>
+					<Link to={`/${slug}/${node.frontmatter.slug}`}>
 						{node.frontmatter.title}
 					</Link>
 				</li>
@@ -44,11 +36,6 @@ export default BlogPage
 
 export const pageQuery = graphql`
 	query {
-		site {
-			siteMetadata {
-				blogPathPath
-			}
-		}
 		posts: allMarkdownRemark(
 			filter: { fileAbsolutePath: { regex: "/src/posts/" } }
 			sort: { order: DESC, fields: [frontmatter___date] }

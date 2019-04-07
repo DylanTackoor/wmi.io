@@ -16,8 +16,6 @@ const gatsbyConfig = {
 		description: `Full Service Advertising & Marketing Agency offering SEM, SEO, Display, Social & Traditional Media Services in Miami, Toronto, Hawaii, Orlando and L.A.`,
 		author: `Dylan Tackoor`,
 		siteUrl: `https://wmi.io`,
-		phoneNumber: `+1305-572-0404`,
-		blogPathPath: `/blog/`,
 	},
 	plugins: [
 		// Type safety

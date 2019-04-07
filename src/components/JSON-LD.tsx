@@ -3,6 +3,18 @@ import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import { Organization, PostalAddress } from 'schema-dts'
 
+// HACK: query these w/GraphQL
+import {
+	email,
+	facebookURL,
+	instagramURL,
+	linkedinURL,
+	telephone,
+	twitterURL,
+	youtubeURL,
+} from '../cms/content/settings.json'
+const contactPageSlug = 'contact'
+
 const graphImg = require('../images/opengraph.png')
 
 export const WorldmediaLD: FunctionComponent = () => {
@@ -14,7 +26,6 @@ export const WorldmediaLD: FunctionComponent = () => {
 						title
 						description
 						siteUrl
-						phoneNumber
 					}
 				}
 			}
@@ -169,8 +180,8 @@ export const WorldmediaLD: FunctionComponent = () => {
 		description,
 		image: `${siteUrl}${graphImg}`,
 		name: title,
-		email: `hello@worldmedia.net`,
-		telephone: phoneNumber,
+		email,
+		telephone,
 		address,
 		url: siteUrl,
 		award: ['Gold Magellan x2'],
@@ -178,15 +189,9 @@ export const WorldmediaLD: FunctionComponent = () => {
 			'@type': 'ContactPoint',
 			contactType: 'sales',
 			telephone: phoneNumber,
-			url: 'https://www.worldmedia.net/contact/message-us',
+			url: `${siteUrl}/${contactPageSlug}/`,
 		},
-		sameAs: [
-			'https://www.facebook.com/WorldmediaInteractive',
-			'https://twitter.com/worldmediamiami',
-			'https://www.instagram.com/worldmedia_interactive/',
-			'https://www.linkedin.com/company/worldmedia-interactive',
-			'https://www.youtube.com/user/WorldmediaMiami',
-		],
+		sameAs: [facebookURL, twitterURL, instagramURL, linkedinURL, youtubeURL],
 		brand: brands,
 		// foundingDate: '',
 		// foundingLocation: address,
