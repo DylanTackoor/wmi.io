@@ -25,7 +25,7 @@ collections:
     name: 'pages'
     description: Pages. TODO include guidlines here.
     files:
-      - label: 'About Page'
+      - label: 'About'
         name: 'about'
         file: 'src/cms/content/about.json'
         fields:
@@ -38,7 +38,7 @@ collections:
               - { label: Name, name: name, widget: string }
               - { label: Position, name: position, widget: string }
               - { label: Photo, name: photo, widget: image }
-      - label: 'Locations Page'
+      - label: 'Locations'
         name: 'locations'
         file: 'src/cms/content/locations.json'
         fields:
@@ -50,20 +50,28 @@ collections:
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Address, name: address, widget: string }
-      - label: 'Careers Page'
+      - label: 'Careers'
         name: 'careers'
         file: 'src/cms/content/careers.json'
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Intro, name: intro, widget: markdown }
-          - label: Careers
-            name: careers
+          - label: Departments
+            name: departments
             widget: list
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Department, name: department, widget: string }
-              - label: 'Opened'
-                name: 'opened'
-                widget: 'date'
-                default: ''
-                format: 'MMM Do YY'
+              - label: Department
+                name: department
+                widget: string
+              - label: Careers
+                name: careers
+                widget: list
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: 'Opened'
+                    name: 'opened'
+                    widget: 'date'
+                    default: ''
+                    format: 'MMM Do YY'
