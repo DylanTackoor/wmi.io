@@ -2,15 +2,15 @@ import React, { FunctionComponent } from 'react'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 
-import data from '../cms/content/careers.json'
+import { departments, intro, title } from '../cms/content/careers.json'
 
 const CareersPage: FunctionComponent = () => (
 	<Layout>
 		<SEO title='Careers' />
-		<h1>{data.title}</h1>
-		<p>{data.intro}</p>
+		<h1>{title}</h1>
+		<p>{intro}</p>
 
-		{data.departments.map(department => (
+		{departments.map(department => (
 			<div>
 				<h2>{department.name}</h2>
 				<ul>
