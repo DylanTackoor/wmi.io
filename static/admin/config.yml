@@ -114,6 +114,59 @@ collections:
     editor:
       preview: false
     files:
+      - label: General
+        name: general
+        file: src/cms/content/settings.json
+        fields:
+          - label: Email
+            name: email
+            widget: string
+            # pattern: [
+            #   '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i',
+            #   'Email Address'
+            # ]
+          - label: Phone Number
+            name: telephone
+            widget: string
+            # pattern: [
+            #   '\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$',
+            #   'Phone Number'
+            # ]
+          - label: Facebook URL
+            name: facebookURL
+            widget: string
+            # pattern: [
+            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+            #   'HTTPS URL'
+            # ]
+          - label: Twitter URL
+            name: twitterURL
+            widget: string
+            # pattern: [
+            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+            #   'HTTPS URL'
+            # ]
+          - label: Instagram URL
+            name: instagramURL
+            widget: string
+            # pattern: [
+            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+            #   'HTTPS URL'
+            # ]
+          - label: LinkedIn URL
+            name: linkedinURL
+            widget: string
+            # pattern: [
+            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+            #   'HTTPS URL'
+            # ]
+          - label: YouTube URL
+            name: youtubeURL
+            widget: string
+            # pattern: [
+            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
+            #   'HTTPS URL'
+            # ]
       - label: Analytics
         name: analytics
         file: src/cms/content/analytics.json
@@ -121,6 +174,7 @@ collections:
           - label: Tracking ID
             name: googleAnalyticsKey
             widget: string
+            # pattern: ['/^ua-\d{4,9}-\d{1,4}$/i', 'Google Analytics ID']
       - label: Design
         name: design
         file: src/cms/content/design.json
@@ -134,5 +188,5 @@ collections:
             # pattern:
             #   [
             #     '/^((0x){0,1}|#{0,1})([0-9A-F]{8}|[0-9A-F]{6})$/gi',
-            #     'Must be a valid hex color.',
+            #     'Hex Color',
             #   ]
