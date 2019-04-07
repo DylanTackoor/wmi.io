@@ -1,1 +1,37 @@
-{}
+{
+  "title": "Careers",
+  "intro": "asdf",
+  "departments": [
+    {
+      "department": "Client Services",
+      "careers": [
+        {
+          "title": "Junior Account Executive",
+          "opened": "Apr 7th 19"
+        }
+      ]
+    },
+    {
+      "department": "eCRM",
+      "careers": [
+        {
+          "title": "Email Marketing (eCRM) Specialist",
+          "opened": "Apr 7th 19"
+        }
+      ]
+    },
+    {
+      "department": "SEM",
+      "careers": [
+        {
+          "title": "SEM Specialist",
+          "opened": "Apr 7th 19"
+        },
+        {
+          "title": "Senior SEM Specialist",
+          "opened": "Apr 7th 19"
+        }
+      ]
+    }
+  ]
+}
