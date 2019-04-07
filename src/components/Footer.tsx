@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import React, { FunctionComponent } from 'react'
 
 // Elements
@@ -57,11 +58,18 @@ export const Footer: FunctionComponent = () => (
 
 				{/* Social media */}
 				<div>
-					{/* TODO: replace with OutboundLink */}
-					<a href='/'>Twitter</a>
-					<a href='/'>Facebook</a>
-					<a href='/'>LinkedIn</a>
-					<a href='/'>Instagram</a>
+					<OutboundLink href='https://twitter.com/worldmediamiami'>
+						Twitter
+					</OutboundLink>
+					<OutboundLink href='https://www.facebook.com/WorldmediaInteractive'>
+						Facebook
+					</OutboundLink>
+					<OutboundLink href='https://www.linkedin.com/company/worldmedia-interactive'>
+						LinkedIn
+					</OutboundLink>
+					<OutboundLink href='https://www.instagram.com/worldmedia_interactive/'>
+						Instagram
+					</OutboundLink>
 				</div>
 			</div>
 		</div>
