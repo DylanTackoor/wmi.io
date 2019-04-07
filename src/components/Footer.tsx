@@ -48,7 +48,7 @@ export const Footer: FunctionComponent = () => (
 			<div>
 				{/* Legal Links */}
 				<div>
-					<p>© 2019 Worldmedia Interactive.</p>
+					<p>&copy; {new Date().getFullYear()} Worldmedia Interactive.</p>
 					<p>
 						{/* TODO: Don't hardcode these links */}
 						<Link to='/terms'>Terms &amp; Conditions</Link> |{' '}
