@@ -10,8 +10,8 @@ public_folder: assets
 
 collections:
   - name: posts
-    label: Post
-    label_singular: Posts
+    label: Posts
+    label_singular: Post
     description: Blog posts. TODO include guidlines here.
     folder: src/posts
     create: true
@@ -27,9 +27,12 @@ collections:
         label: Body
         widget: markdown
 
-  - label: Pages
-    name: pages
+  - name: pages
+    label: Pages
+    label_singular: Page
     description: Pages. TODO include guidlines here.
+    editor:
+      preview: false
     files:
       - label: About
         name: about
@@ -104,15 +107,18 @@ collections:
                     format: MMM Do YY
                     # default:
 
-  - label: Settings
-    name: settings
+  - name: settings
+    label: Settings
+    label_singular: Setting
     description: Various settings across the site
+    editor:
+      preview: false
     files:
       - label: Analytics
         name: analytics
         file: src/cms/content/analytics.json
         fields:
-          - label: googleAnalyticsKey
+          - label: Tracking ID
             name: googleAnalyticsKey
             widget: string
       - label: Design
