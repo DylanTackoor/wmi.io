@@ -61,6 +61,7 @@ collections:
             widget: list
             fields:
               - { label: Title, name: title, widget: string }
+              - { label: Department, name: department, widget: string }
               - label: 'Opened'
                 name: 'opened'
                 widget: 'date'
