@@ -50,3 +50,19 @@ collections:
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Address, name: address, widget: string }
+      - label: 'Careers Page'
+        name: 'careers'
+        file: 'src/cms/content/careers.json'
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: markdown }
+          - label: Careers
+            name: careers
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: 'Opened'
+                name: 'opened'
+                widget: 'date'
+                default: ''
+                format: 'MMM Do YY'
