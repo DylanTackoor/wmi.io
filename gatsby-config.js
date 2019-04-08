@@ -1,5 +1,13 @@
 const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
-const { googleAnalyticsKey } = require(`./src/cms/content/analytics.json`)
+const {
+	googleAnalyticsKey,
+	// googleAnalyticsViewID,
+	// dayCountForPrefetching,
+} = require(`./src/cms/content/analytics.json`)
+
+// Guess.js date range
+// const endDate = new Date()
+// const startDate = new Date().setDate(endDate.getDate() - dayCountForPrefetching)
 
 const { NODE_ENV } = process.env
 
@@ -179,18 +187,6 @@ const gatsbyConfig = {
 		// 		includeInDevelopment: false,
 		// 	},
 		// },
-		// {
-		// 	resolve: `gatsby-plugin-guess-js`,
-		// 	options: {
-		// 		// Find the view id in the GA admin in a section labeled "views"
-		// 		GAViewID: `VIEW_ID`,
-		// 		minimumThreshold: 0.03,
-		// 		period: {
-		// 			startDate: new Date(`2019-1-1`),
-		// 			endDate: new Date(),
-		// 		},
-		// 	},
-		// },
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
@@ -198,6 +194,19 @@ const gatsbyConfig = {
 				head: true,
 			},
 		},
+
+		// TODO: GA API authentication
+		// {
+		// 	resolve: `gatsby-plugin-guess-js`,
+		// 	options: {
+		// 		GAViewID: googleAnalyticsViewID,
+		// 		minimumThreshold: 0.03,
+		// 		period: {
+		// 			startDate,
+		// 			endDate,
+		// 		},
+		// 	},
+		// },
 
 		// File compression
 		`gatsby-plugin-zopfli`,

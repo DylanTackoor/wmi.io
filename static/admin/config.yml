@@ -192,6 +192,17 @@ collections:
             name: googleAnalyticsKey
             widget: string
             # pattern: ['/^ua-\d{4,9}-\d{1,4}$/i', 'Google Analytics ID']
+          - label: Google Analytics View ID
+            name: googleAnalyticsViewID
+            widget: string
+          - label: Days of analytics data to use for prefetching
+            name: dayCountForPrefetching
+            widget: 'number'
+            default: 5
+            valueType: 'int'
+            min: 1
+            max: 31
+            step: 1
       - label: Design
         name: design
         file: src/cms/content/design.json
