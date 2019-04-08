@@ -39,6 +39,7 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 
 	return (
 		<Helmet htmlAttributes={{ lang: 'en' || props.lang }} title={title}>
+			{/* TODO: move all meta tags to Helmet props */}
 			<meta name='description' content={description} />
 
 			<meta property='og:locale' content='en_US' />
