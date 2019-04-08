@@ -78,6 +78,14 @@ const gatsbyConfig = {
 			},
 		},
 
+		`gatsby-transformer-json`,
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `data`,
+				path: `${__dirname}/src/cms/content/`,
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -85,13 +93,11 @@ const gatsbyConfig = {
 				path: `${__dirname}/src/images`,
 			},
 		},
-
-		// Links blog post entries
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				path: `${__dirname}/src/posts`,
 				name: `markdown-pages`,
+				path: `${__dirname}/src/posts`,
 			},
 		},
 		// `gatsby-transformer-remark`,
