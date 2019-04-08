@@ -218,3 +218,11 @@ collections:
             #     '/^((0x){0,1}|#{0,1})([0-9A-F]{8}|[0-9A-F]{6})$/gi',
             #     'Hex Color',
             #   ]
+      - label: SEO
+        name: seo
+        file: src/cms/content/seo.json
+        fields:
+          - label: Default Key Words
+            name: defaultKeyWords
+            widget: 'list'
+            field: { label: Keyword, name: word, widget: string }
