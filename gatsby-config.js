@@ -203,7 +203,6 @@ const gatsbyConfig = {
 			},
 		},
 
-		// TODO: GA API authentication
 		// Google Analytics machine learning plugin to optimize predictive prefetching
 		{
 			resolve: `gatsby-plugin-guess-js`,
