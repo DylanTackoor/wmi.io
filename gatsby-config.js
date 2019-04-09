@@ -1,15 +1,17 @@
+require(`dotenv`).config()
+
 const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
 const {
 	googleAnalyticsKey,
-	// googleAnalyticsViewID,
-	// dayCountForPrefetching,
+	googleAnalyticsViewID,
+	dayCountForPrefetching,
 } = require(`./src/cms/content/analytics.json`)
 
 // Guess.js date range
-// const endDate = new Date()
-// const startDate = new Date().setDate(endDate.getDate() - dayCountForPrefetching)
+const endDate = new Date()
+const startDate = new Date().setDate(endDate.getDate() - dayCountForPrefetching)
 
-const { NODE_ENV } = process.env
+const { NODE_ENV, GA_PRIVATE_KEY, GA_CLIENT_EMAIL } = process.env
 
 const netlifyCmsPaths = {
 	resolve: `gatsby-plugin-netlify-cms-paths`,
@@ -202,17 +204,23 @@ const gatsbyConfig = {
 		},
 
 		// TODO: GA API authentication
-		// {
-		// 	resolve: `gatsby-plugin-guess-js`,
-		// 	options: {
-		// 		GAViewID: googleAnalyticsViewID,
-		// 		minimumThreshold: 0.03,
-		// 		period: {
-		// 			startDate,
-		// 			endDate,
-		// 		},
-		// 	},
-		// },
+		// Google Analytics machine learning plugin to optimize predictive prefetching
+		{
+			resolve: `gatsby-plugin-guess-js`,
+			options: {
+				GAViewID: googleAnalyticsViewID,
+				jwt: {
+					// HACK: fixes dotenv newline character support
+					private_key: JSON.parse(`"${GA_PRIVATE_KEY}"`),
+					client_email: GA_CLIENT_EMAIL,
+				},
+				minimumThreshold: 0.03,
+				period: {
+					startDate,
+					endDate,
+				},
+			},
+		},
 
 		// File compression
 		`gatsby-plugin-zopfli`,
