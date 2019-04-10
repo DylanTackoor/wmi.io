@@ -46,18 +46,18 @@ const AgencyPage: FunctionComponent = () => {
 				<h2>Our Offices</h2>
 				{agency.ourOffices.map(office => (
 					<div key={office.city}>
+						<img src={office.logo} />
 						<p>{office.city}</p>
 						<p>{office.title}</p>
-						<img src={office.logo} />
 					</div>
 				))}
 
 				<h2>Partner Offices</h2>
 				{agency.partnerOffices.map(office => (
 					<div key={office.city}>
+						<img src={office.logo} />
 						<p>{office.city}</p>
 						<p>{office.title}</p>
-						<img src={office.logo} />
 					</div>
 				))}
 			</div>
