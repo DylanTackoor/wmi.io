@@ -42,6 +42,10 @@ export const NavBar: FunctionComponent = () => {
 			title: 'Services',
 		},
 		{
+			path: '/agency',
+			title: 'Agency',
+		},
+		{
 			path: '/about',
 			title: 'About',
 		},
