@@ -17,11 +17,8 @@ const AgencyPage: FunctionComponent = () => {
 			</header>
 
 			<div>
-				<p>
-					Great brands know how to stand out. Know how to rise above the
-					competition. But above all, they know what it takes to win.
-				</p>
-				<h2>SO DO WE.</h2>
+				<p>{agency.introText}</p>
+				<h2>{agency.introTitle}</h2>
 			</div>
 
 			{/* <div>
@@ -33,16 +30,16 @@ const AgencyPage: FunctionComponent = () => {
 				</ul>
 			</div> */}
 
-			{/* <div>
-				<h2>OUR AGENCY</h2>
-				<p>By The Numbers.</p>
+			<div>
+				<h2>{agency.statsTitle}</h2>
+				<p>{agency.statsSubtitle}</p>
 
 				<div>
 					<p>19+</p>
 					<p>YEARS</p>
 					<p>Of Innovative Solutions</p>
 				</div>
-			</div> */}
+			</div>
 		</Layout>
 	)
 }
