@@ -36,7 +36,7 @@ collections:
     files:
       - label: Agency
         name: agency
-        file: src/cms/content/agencyTest.json
+        file: src/cms/content/agency2.json
         fields:
           - label: Title
             name: title
