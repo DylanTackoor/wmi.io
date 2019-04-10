@@ -41,6 +41,31 @@
 			"number": "19+",
 			"stat": "YEARS",
 			"description": "Of Innovative Solutions"
+		},
+		{
+			"number": "100%",
+			"stat": "INDEPENDENT",
+			"description": "Owned and Operated"
+		},
+		{
+			"number": "75+",
+			"stat": "TALENTED",
+			"description": "People Working Here"
+		},
+		{
+			"number": "7.5",
+			"stat": "LANGUAGES",
+			"description": "Spoken In The Office"
+		},
+		{
+			"number": "1.6k",
+			"stat": "STORIES",
+			"description": "Creatively Told"
+		},
+		{
+			"number": "4k",
+			"stat": "RELATIONSHIPS",
+			"description": "Length vs Average"
 		}
 	]
 }
