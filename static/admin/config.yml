@@ -1,3 +1,5 @@
+# Keep `label` field on top
+
 backend:
   name: github
   repo: DylanTackoor/wmi.io
@@ -9,9 +11,9 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: posts
-    label: Posts
+  - label: Posts
     label_singular: Post
+    name: posts
     description: Blog posts. TODO include guidlines here.
     folder: src/posts
     create: true
@@ -27,9 +29,9 @@ collections:
         label: Body
         widget: markdown
 
-  - name: pages
-    label: Pages
+  - label: Pages
     label_singular: Page
+    name: pages
     description: Pages. TODO include guidlines here.
     editor:
       preview: false
@@ -69,8 +71,8 @@ collections:
           - label: Stats Subtitle
             name: statsSubtitle
             widget: string
-          - label: Team Skills
-            name: skills
+          - label: Stats
+            name: stats
             widget: list
             fields:
               - label: Number
@@ -82,32 +84,32 @@ collections:
               - label: Description
                 name: description
                 widget: string
-            - label: Our Offices
-              name: ourOffices
-              widget: list
-              fields:
-                - label: Logo
-                  name: logo
-                  widget: image
-                - label: City
-                  name: city
-                  widget: string
-                - label: Title
-                  name: title
-                  widget: string
-            - label: Partner Offices
-              name: partnerOffices
-              widget: list
-              fields:
-                - label: Logo
-                  name: logo
-                  widget: image
-                - label: City
-                  name: city
-                  widget: string
-                - label: Title
-                  name: title
-                  widget: string
+          - label: Our Offices
+            name: ourOffices
+            widget: list
+            fields:
+              - label: Logo
+                name: logo
+                widget: image
+              - label: City
+                name: city
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+          - label: Partner Offices
+                name: partnerOffices
+                widget: list
+                fields:
+                  - label: Logo
+                    name: logo
+                    widget: image
+                  - label: City
+                    name: city
+                    widget: string
+                  - label: Title
+                    name: title
+                    widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
@@ -198,9 +200,9 @@ collections:
                     format: MMM Do YY
                     # default:
 
-  - name: settings
-    label: Settings
+  - label: Settings
     label_singular: Setting
+    name: settings
     description: Various settings across the site
     editor:
       preview: false
