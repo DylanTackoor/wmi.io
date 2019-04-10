@@ -21,14 +21,12 @@ const AgencyPage: FunctionComponent = () => {
 				<h2>{agency.introTitle}</h2>
 			</div>
 
-			{/* <div>
-				<h2>{agency.skillsTitle}</h2>
-				<ul>
-					{agency.skills.map(skill => (
-						<li key={skill}>{skill}</li>
-					))}
-				</ul>
-			</div> */}
+			<div>
+				<h2>{agency.teamTitle}</h2>
+				{agency.skills.map(skill => (
+					<p key={skill}>{skill}</p>
+				))}
+			</div>
 
 			<div>
 				<h2>{agency.statsTitle}</h2>
