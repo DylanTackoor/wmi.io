@@ -1,44 +1,39 @@
 {
-	"title": "Success starts here\nWelcome To\nWorldmedia Interactive",
-	"skillsTitle": "WINNING STARTS WITH OUR STRONG TEAM",
-	"skills": [
-		"STRATEGISTS",
-		"STORYTELLERS",
-		"DESIGNERS",
-		"MEDIA MAVENS",
-		"DATA SCIENTISTS",
-		"RELATIONSHIP BUILDERS",
-		"TRUSTED PARTNER"
+	"introBackgroundImage": "/assets/hello.png",
+	"ourOffices": [
+		{
+			"city": "Miami",
+			"title": "Headquarters",
+			"logo": "/assets/miami_office.png"
+		},
+		{
+			"city": "HONOLULU",
+			"title": "Asia Pacific Office",
+			"logo": "/assets/honolulu_office.png"
+		}
 	],
-	"offices": {
-		"ours": [
-			{
-				"icon": "",
-				"city": "Miami",
-				"name": "Headquarters"
-			},
-			{
-				"icon": "",
-				"city": "Honolulu",
-				"name": "Asia Pacific Office"
-			}
-		],
-		"partners": [
-			{
-				"icon": "",
-				"city": "Los Angeles",
-				"name": "West Coast Office"
-			},
-			{
-				"icon": "",
-				"city": "Osaka",
-				"name": "Japan Office"
-			},
-			{
-				"icon": "",
-				"city": "Hong Kong",
-				"name": "China Office"
-			}
-		]
-	}
+	"partnerOffices": [
+		{
+			"logo": "",
+			"city": "Los Angeles",
+			"title": "West Coast Office"
+		},
+		{
+			"logo": "",
+			"city": "Osaka",
+			"title": "Japan Office"
+		},
+		{
+			"logo": "",
+			"city": "Hong Kong",
+			"title": "China Office"
+		}
+	],
+	"introTitle": "SO DO WE.",
+	"backgroundVideo": "asf",
+	"statsSubtitle": "By The Numbers.",
+	"title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
+	"statsTitle": "OUR AGENCY",
+	"introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
+	"teamTitle": "WINNING STARTS WITH OUR STRONG TEAM"
 }
