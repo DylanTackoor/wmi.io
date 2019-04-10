@@ -14,7 +14,23 @@
   ],
   "introTitle": "SO DO WE.",
   "backgroundVideo": "asf",
-  "partnerOffices": [],
+  "partnerOffices": [
+    {
+      "city": "LOS ANGELES",
+      "title": "West Coast Office",
+      "logo": "/assets/losangeles_office.png"
+    },
+    {
+      "city": "OSAKA",
+      "title": "Japan Office",
+      "logo": "/assets/osaka_office.png"
+    },
+    {
+      "city": "HONG KONG",
+      "title": "China Office",
+      "logo": "/assets/hongkong_office.png"
+    }
+  ],
   "statsSubtitle": "By The Numbers.",
   "title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
   "statsTitle": "OUR AGENCY",
