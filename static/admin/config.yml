@@ -44,11 +44,18 @@ collections:
           - label: Skills Title
             name: skillsTitle
             widget: string
-          - label: Skills
-            name: skills
-            widget: list
-            field:
-              - widget: string
+          - {
+              label: Background Video,
+              name: headerVideo,
+              widget: youtube,
+              extraInfo: false,
+            }
+          # APIkey: '<KEY>',
+          # - label: Skills
+          #   name: skills
+          #   widget: list
+          #   field:
+          #     - widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
