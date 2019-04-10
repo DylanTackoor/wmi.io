@@ -33,12 +33,33 @@ const AgencyPage: FunctionComponent = () => {
 			<div>
 				<h2>{agency.statsTitle}</h2>
 				<p>{agency.statsSubtitle}</p>
+				{agency.stats.map(stat => (
+					<div key={stat.description}>
+						<p>{stat.number}</p>
+						<p>{stat.stat}</p>
+						<p>{stat.description}</p>
+					</div>
+				))}
+			</div>
 
-				<div>
-					<p>19+</p>
-					<p>YEARS</p>
-					<p>Of Innovative Solutions</p>
-				</div>
+			<div>
+				<h2>Our Offices</h2>
+				{agency.ourOffices.map(office => (
+					<div key={office.city}>
+						<p>{office.city}</p>
+						<p>{office.title}</p>
+						<img src={office.logo} />
+					</div>
+				))}
+
+				<h2>Partner Offices</h2>
+				{agency.partnerOffices.map(office => (
+					<div key={office.city}>
+						<p>{office.city}</p>
+						<p>{office.title}</p>
+						<img src={office.logo} />
+					</div>
+				))}
 			</div>
 		</Layout>
 	)
