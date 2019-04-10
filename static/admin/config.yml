@@ -82,36 +82,32 @@ collections:
               - label: Description
                 name: description
                 widget: string
-          - label: Offices
-            name: offices
-            widget: list
-            fields:
-              - label: Ours
-                name: ours
-                widget: list
-                fields:
-                  - label: Logo
-                    name: logo
-                    widget: image
-                  - label: City
-                    name: city
-                    widget: string
-                  - label: Title
-                    name: title
-                    widget: string
-              - label: Partner
-                name: partner
-                widget: list
-                fields:
-                  - label: Logo
-                    name: logo
-                    widget: image
-                  - label: City
-                    name: city
-                    widget: string
-                  - label: Title
-                    name: title
-                    widget: string
+            - label: Our Offices
+              name: ourOffices
+              widget: list
+              fields:
+                - label: Logo
+                  name: logo
+                  widget: image
+                - label: City
+                  name: city
+                  widget: string
+                - label: Title
+                  name: title
+                  widget: string
+            - label: Partner Offices
+              name: partnerOffices
+              widget: list
+              fields:
+                - label: Logo
+                  name: logo
+                  widget: image
+                - label: City
+                  name: city
+                  widget: string
+                - label: Title
+                  name: title
+                  widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
