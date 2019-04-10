@@ -53,7 +53,7 @@ collections:
             name: introTitle
             widget: string
           - label: Intro Background Image
-            name: introTitle
+            name: introBackgroundImage
             widget: image
           - label: Team Title
             name: teamTitle
