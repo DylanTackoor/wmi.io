@@ -5,6 +5,11 @@
       "city": "Miami",
       "title": "Headquarters",
       "logo": "/assets/miami_office.png"
+    },
+    {
+      "city": "HONOLULU",
+      "title": "Asia Pacific Office",
+      "logo": "/assets/honolulu_office.png"
     }
   ],
   "introTitle": "SO DO WE.",
