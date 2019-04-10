@@ -12,9 +12,9 @@ import './cms.css'
  * Let's say you've created widget and preview components for a custom image
  * gallery widget in separate files:
  */
-import { youtubeControl, youtubePreview } from 'netlify-cms-widget-youtube'
+// import { youtubeControl, youtubePreview } from 'netlify-cms-widget-youtube'
 
 /**
  * Register the imported widget:
  */
-CMS.registerWidget('youtube', youtubeControl, youtubePreview)
+// CMS.registerWidget('youtube', youtubeControl, youtubePreview)

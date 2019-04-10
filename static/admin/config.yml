@@ -41,19 +41,28 @@ collections:
           - label: Title
             name: title
             widget: string
-          - label: Skills Title
-            name: skillsTitle
-            widget: string
           - label: Background Video
-            name: headerVideo
-            widget: youtube
-            extraInfo: false
-          # APIkey: '<KEY>',
-          # - label: Skills
-          #   name: skills
-          #   widget: list
-          #   field:
-          #     - widget: string
+            name: backgroundVideo
+            widget: string
+          - label: Intro Text
+            name: introText
+            widget: string
+          - label: Intro Title
+            name: introTitle
+            widget: string
+          - label: Intro Background Image
+            name: introTitle
+            widget: image
+          - label: Team Title
+            name: teamTitle
+            widget: string
+          - label: Team Skills
+            name: skills
+            widget: list
+            field:
+              - label: Skill
+              - name: skill
+              - widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
