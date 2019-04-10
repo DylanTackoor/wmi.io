@@ -18,5 +18,12 @@
   "title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
   "statsTitle": "OUR AGENCY",
   "introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
-  "teamTitle": "WINNING STARTS WITH OUR STRONG TEAM"
+  "teamTitle": "WINNING STARTS WITH OUR STRONG TEAM",
+  "stats": [
+    {
+      "number": "19+",
+      "stat": "YEARS",
+      "description": "Of Innovative Solutions"
+    }
+  ]
 }
