@@ -44,12 +44,10 @@ collections:
           - label: Skills Title
             name: skillsTitle
             widget: string
-          - {
-              label: Background Video,
-              name: headerVideo,
-              widget: youtube,
-              extraInfo: false,
-            }
+          - label: Background Video
+            name: headerVideo
+            widget: youtube
+            extraInfo: false
           # APIkey: '<KEY>',
           # - label: Skills
           #   name: skills
