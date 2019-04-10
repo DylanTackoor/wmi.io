@@ -98,18 +98,18 @@ collections:
                 name: title
                 widget: string
           - label: Partner Offices
-                name: partnerOffices
-                widget: list
-                fields:
-                  - label: Logo
-                    name: logo
-                    widget: image
-                  - label: City
-                    name: city
-                    widget: string
-                  - label: Title
-                    name: title
-                    widget: string
+            name: partnerOffices
+            widget: list
+            fields:
+              - label: Logo
+                name: logo
+                widget: image
+              - label: City
+                name: city
+                widget: string
+              - label: Title
+                name: title
+                widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
