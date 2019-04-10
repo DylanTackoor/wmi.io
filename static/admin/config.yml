@@ -34,6 +34,21 @@ collections:
     editor:
       preview: false
     files:
+      - label: Agency
+        name: agency
+        file: src/cms/content/agencyTest.json
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Skills Title
+            name: skillsTitle
+            widget: string
+          - label: Skills
+            name: skills
+            widget: list
+            field:
+              - widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json

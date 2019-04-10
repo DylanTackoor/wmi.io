@@ -1,0 +1,44 @@
+{
+	"title": "Success starts here\nWelcome To\nWorldmedia Interactive",
+	"skillsTitle": "WINNING STARTS WITH OUR STRONG TEAM",
+	"skills": [
+		"STRATEGISTS",
+		"STORYTELLERS",
+		"DESIGNERS",
+		"MEDIA MAVENS",
+		"DATA SCIENTISTS",
+		"RELATIONSHIP BUILDERS",
+		"TRUSTED PARTNER"
+	],
+	"offices": {
+		"ours": [
+			{
+				"icon": "",
+				"city": "Miami",
+				"name": "Headquarters"
+			},
+			{
+				"icon": "",
+				"city": "Honolulu",
+				"name": "Asia Pacific Office"
+			}
+		],
+		"partners": [
+			{
+				"icon": "",
+				"city": "Los Angeles",
+				"name": "West Coast Office"
+			},
+			{
+				"icon": "",
+				"city": "Osaka",
+				"name": "Japan Office"
+			},
+			{
+				"icon": "",
+				"city": "Hong Kong",
+				"name": "China Office"
+			}
+		]
+	}
+}
