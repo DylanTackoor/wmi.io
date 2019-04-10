@@ -63,8 +63,8 @@ collections:
             widget: list
             field:
               - label: Skill
-              - name: skill
-              - widget: string
+                name: skill
+                widget: string
           - label: Stats Title
             name: statsTitle
             widget: string
