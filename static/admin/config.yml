@@ -61,10 +61,7 @@ collections:
           - label: Team Skills
             name: skills
             widget: list
-            field:
-              - label: Skill
-                name: skill
-                widget: string
+            field: { label: Skill, name: skill, widget: string }
           - label: Stats Title
             name: statsTitle
             widget: string
