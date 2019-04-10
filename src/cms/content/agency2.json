@@ -1,71 +1,71 @@
 {
-  "introBackgroundImage": "/assets/hello.png",
-  "ourOffices": [
-    {
-      "city": "MIAMI",
-      "title": "Headquarters",
-      "logo": "/assets/miami_office.png"
-    },
-    {
-      "city": "HONOLULU",
-      "title": "Asia Pacific Office",
-      "logo": "/assets/honolulu_office.png"
-    }
-  ],
-  "introTitle": "SO DO WE.",
-  "backgroundVideo": "asf",
-  "partnerOffices": [
-    {
-      "city": "LOS ANGELES",
-      "title": "West Coast Office",
-      "logo": "/assets/losangeles_office.png"
-    },
-    {
-      "city": "OSAKA",
-      "title": "Japan Office",
-      "logo": "/assets/osaka_office.png"
-    },
-    {
-      "city": "HONG KONG",
-      "title": "China Office",
-      "logo": "/assets/hongkong_office.png"
-    }
-  ],
-  "statsSubtitle": "By The Numbers.",
-  "title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
-  "statsTitle": "OUR AGENCY",
-  "introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
-  "teamTitle": "WINNING STARTS WITH OUR STRONG TEAM",
-  "stats": [
-    {
-      "number": "19+",
-      "stat": "YEARS",
-      "description": "Of Innovative Solutions"
-    },
-    {
-      "number": "100%",
-      "stat": "INDEPENDENT",
-      "description": "Owned and Operated"
-    },
-    {
-      "number": "75+",
-      "stat": "TALENTED",
-      "description": "People Working Here"
-    },
-    {
-      "number": "7.5",
-      "stat": "LANGUAGES",
-      "description": "Spoken In The Office"
-    },
-    {
-      "number": "1.6K",
-      "stat": "STORIES",
-      "description": "Creatively Told"
-    },
-    {
-      "number": "4x",
-      "stat": "RELATIONSHIPS",
-      "description": "Length vs Average"
-    }
-  ]
+	"introBackgroundImage": "/assets/hello.png",
+	"ourOffices": [
+		{
+			"city": "MIAMI",
+			"title": "Headquarters",
+			"logo": "/assets/miami_office.png"
+		},
+		{
+			"city": "HONOLULU",
+			"title": "Asia Pacific Office",
+			"logo": "/assets/honolulu_office.png"
+		}
+	],
+	"introTitle": "SO DO WE.",
+	"backgroundVideo": "/assets/agency.mp4",
+	"partnerOffices": [
+		{
+			"city": "LOS ANGELES",
+			"title": "West Coast Office",
+			"logo": "/assets/losangeles_office.png"
+		},
+		{
+			"city": "OSAKA",
+			"title": "Japan Office",
+			"logo": "/assets/osaka_office.png"
+		},
+		{
+			"city": "HONG KONG",
+			"title": "China Office",
+			"logo": "/assets/hongkong_office.png"
+		}
+	],
+	"statsSubtitle": "By The Numbers.",
+	"title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
+	"statsTitle": "OUR AGENCY",
+	"introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
+	"teamTitle": "WINNING STARTS WITH OUR STRONG TEAM",
+	"stats": [
+		{
+			"number": "19+",
+			"stat": "YEARS",
+			"description": "Of Innovative Solutions"
+		},
+		{
+			"number": "100%",
+			"stat": "INDEPENDENT",
+			"description": "Owned and Operated"
+		},
+		{
+			"number": "75+",
+			"stat": "TALENTED",
+			"description": "People Working Here"
+		},
+		{
+			"number": "7.5",
+			"stat": "LANGUAGES",
+			"description": "Spoken In The Office"
+		},
+		{
+			"number": "1.6K",
+			"stat": "STORIES",
+			"description": "Creatively Told"
+		},
+		{
+			"number": "4x",
+			"stat": "RELATIONSHIPS",
+			"description": "Length vs Average"
+		}
+	]
 }
