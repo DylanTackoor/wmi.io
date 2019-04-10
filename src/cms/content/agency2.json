@@ -1,10 +1,17 @@
 {
-  "title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
-  "backgroundVideo": "asf",
-  "introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
-  "introTitle": "SO DO WE.",
   "introBackgroundImage": "/assets/hello.png",
-  "teamTitle": "WINNING STARTS WITH OUR STRONG TEAM",
+  "ourOffices": [
+    {
+      "city": "Miami",
+      "title": "Headquarters",
+      "logo": "/assets/miami_office.png"
+    }
+  ],
+  "introTitle": "SO DO WE.",
+  "backgroundVideo": "asf",
+  "statsSubtitle": "By The Numbers.",
+  "title": "Success starts here<br/>Welcome to<br/>Worldmedia Interactive",
   "statsTitle": "OUR AGENCY",
-  "statsSubtitle": "By The Numbers."
+  "introText": "Great brands know how to stand out. Know how to rise above the competition. But above all, they know what it takes to win.",
+  "teamTitle": "WINNING STARTS WITH OUR STRONG TEAM"
 }
