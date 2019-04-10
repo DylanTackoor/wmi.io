@@ -63,6 +63,55 @@ collections:
               - label: Skill
               - name: skill
               - widget: string
+          - label: Stats Title
+            name: statsTitle
+            widget: string
+          - label: Stats Subtitle
+            name: statsSubtitle
+            widget: string
+          - label: Team Skills
+            name: skills
+            widget: list
+            fields:
+              - label: Number
+                name: number
+                widget: string
+              - label: Stat
+                name: stat
+                widget: string
+              - label: Description
+                name: description
+                widget: string
+          - label: Offices
+            name: offices
+            widget: list
+            fields:
+              - label: Ours
+                name: ours
+                widget: list
+                fields:
+                  - label: Logo
+                    name: logo
+                    widget: image
+                  - label: City
+                    name: city
+                    widget: string
+                  - label: Title
+                    name: title
+                    widget: string
+              - label: Partner
+                name: partner
+                widget: list
+                fields:
+                  - label: Logo
+                    name: logo
+                    widget: image
+                  - label: City
+                    name: city
+                    widget: string
+                  - label: Title
+                    name: title
+                    widget: string
       - label: Blog
         name: blog
         file: src/cms/content/blog.json
