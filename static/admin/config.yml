@@ -6,7 +6,7 @@ backend:
 
 site_url: https://wmi.io
 logo_url: https://wmi.io/admin/logo.svg
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow # TODO: reenable before this goes live
 media_folder: static/assets
 public_folder: assets
 
