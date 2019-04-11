@@ -11,7 +11,7 @@ const CareersPage: FunctionComponent = () => (
 		<p>{intro}</p>
 
 		{departments.map(department => (
-			<div>
+			<div key={department.name}>
 				<h2>{department.name}</h2>
 				<ul>
 					{department.careers.map(career => (
