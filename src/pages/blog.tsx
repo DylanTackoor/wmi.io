@@ -21,7 +21,7 @@ const BlogPage: FunctionComponent<IBlogPage> = props => (
 		<h1>{title}</h1>
 		<ul>
 			{props.data.posts.edges.map(({ node }) => (
-				<li>
+				<li key={node.frontmatter.slug}>
 					<p>{node.frontmatter.date}</p>
 					<Link to={`/${slug}/${node.frontmatter.slug}`}>
 						{node.frontmatter.title}
