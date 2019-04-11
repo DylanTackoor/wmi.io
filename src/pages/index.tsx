@@ -4,7 +4,7 @@ import { WorldmediaLD } from '../components/JSON-LD'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 
-export interface IndexPageProps {
+export interface IHomePageProps {
 	data: {
 		site: {
 			siteMetadata: {
@@ -15,9 +15,8 @@ export interface IndexPageProps {
 	}
 }
 
-const IndexPage: FunctionComponent<IndexPageProps> = props => {
-	const { siteMetadata } = props.data.site
-	const { title, description } = siteMetadata
+const HomePage: FunctionComponent<IHomePageProps> = props => {
+	const { title, description } = props.data.site.siteMetadata
 
 	return (
 		<Layout>
@@ -29,7 +28,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = props => {
 	)
 }
 
-export default IndexPage
+export default HomePage
 
 export const query = graphql`
 	query {
