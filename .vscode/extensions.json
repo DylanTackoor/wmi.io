@@ -5,6 +5,8 @@
 		"jpoissonnier.vscode-styled-components",
 		"kumar-harsh.graphql-for-vscode",
 		"ms-vscode.vscode-typescript-tslint-plugin",
-		"wix.vscode-import-cost"
+		"wix.vscode-import-cost",
+		"msjsdiag.debugger-for-chrome",
+		"auchenberg.vscode-browser-preview"
 	]
 }
