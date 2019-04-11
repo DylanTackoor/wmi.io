@@ -1,64 +1,102 @@
-// import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
+import { IAgencyPage } from 'wmi'
 import { WorldmediaLD } from '../components/JSON-LD'
 import { Layout } from '../components/Layout'
 import { SEO } from '../components/SEO'
 
-import agency from '../cms/content/agency.json'
+const AgencyPage: FunctionComponent = () => {
+	const { agencyJson }: { agencyJson: IAgencyPage } = useStaticQuery(
+		graphql`
+			query {
+				agencyJson {
+					title
+					backgroundVideo
 
-const AgencyPage: FunctionComponent = () => (
-	<Layout>
-		<SEO />
-		<WorldmediaLD />
+					introTitle
+					introText
+					introBackgroundImage
 
-		<header>
-			<h1>{agency.title}</h1>
-		</header>
+					teamTitle
+					skills
 
-		<div>
-			<p>{agency.introText}</p>
-			<h2>{agency.introTitle}</h2>
-		</div>
+					statsTitle
+					statsSubtitle
+					stats {
+						number
+						stat
+						description
+					}
 
-		<div>
-			<h2>{agency.teamTitle}</h2>
-			{agency.skills.map(skill => (
-				<p key={skill}>{skill}</p>
-			))}
-		</div>
+					ourOffices {
+						city
+						title
+						logo
+					}
+					partnerOffices {
+						city
+						title
+						logo
+					}
+				}
+			}
+		`
+	)
 
-		<div>
-			<h2>{agency.statsTitle}</h2>
-			<p>{agency.statsSubtitle}</p>
-			{agency.stats.map(stat => (
-				<div key={stat.description}>
-					<p>{stat.number}</p>
-					<p>{stat.stat}</p>
-					<p>{stat.description}</p>
-				</div>
-			))}
-		</div>
+	return (
+		<Layout>
+			<SEO />
+			<WorldmediaLD />
 
-		<div>
-			<h2>Our Offices</h2>
-			{agency.ourOffices.map(office => (
-				<div key={office.city}>
-					<img src={office.logo} />
-					<p>{office.city}</p>
-					<p>{office.title}</p>
-				</div>
-			))}
+			<header>
+				<h1>{agencyJson.title}</h1>
+			</header>
 
-			<h2>Partner Offices</h2>
-			{agency.partnerOffices.map(office => (
-				<div key={office.city}>
-					<img src={office.logo} />
-					<p>{office.city}</p>
-					<p>{office.title}</p>
-				</div>
-			))}
-		</div>
-	</Layout>
-)
+			<div>
+				<p>{agencyJson.introText}</p>
+				<h2>{agencyJson.introTitle}</h2>
+			</div>
+
+			<div>
+				<h2>{agencyJson.teamTitle}</h2>
+				{agencyJson.skills.map(skill => (
+					<p key={skill}>{skill}</p>
+				))}
+			</div>
+
+			<div>
+				<h2>{agencyJson.statsTitle}</h2>
+				<p>{agencyJson.statsSubtitle}</p>
+				{agencyJson.stats.map(stat => (
+					<div key={stat.description}>
+						<p>{stat.number}</p>
+						<p>{stat.stat}</p>
+						<p>{stat.description}</p>
+					</div>
+				))}
+			</div>
+
+			<div>
+				<h2>Our Offices</h2>
+				{agencyJson.ourOffices.map(office => (
+					<div key={office.city}>
+						<img src={office.logo} />
+						<p>{office.city}</p>
+						<p>{office.title}</p>
+					</div>
+				))}
+
+				<h2>Partner Offices</h2>
+				{agencyJson.partnerOffices.map(office => (
+					<div key={office.city}>
+						<img src={office.logo} />
+						<p>{office.city}</p>
+						<p>{office.title}</p>
+					</div>
+				))}
+			</div>
+		</Layout>
+	)
+}
 
 export default AgencyPage
