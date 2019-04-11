@@ -1,4 +1,5 @@
 require(`dotenv`).config()
+const { join } = require(`path`)
 
 const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
 const {
@@ -39,7 +40,7 @@ const gatsbyConfig = {
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
-				modulePath: `${__dirname}/src/cms/cms.ts`,
+				modulePath: join(__dirname, `src`, `cms`, `cms.ts`),
 				enableIdentityWidget: true,
 				publicPath: `/admin`,
 				htmlTitle: `WMi CMS`,
@@ -85,21 +86,21 @@ const gatsbyConfig = {
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `data`,
-				path: `${__dirname}/src/cms/content/`,
+				path: join(__dirname, `src`, `cms`, `content`),
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `images`,
-				path: `${__dirname}/src/images`,
+				path: join(__dirname, `src`, `images`),
 			},
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `markdown-pages`,
-				path: `${__dirname}/src/posts`,
+				path: join(__dirname, `src`, `posts`),
 			},
 		},
 		// `gatsby-transformer-remark`,
