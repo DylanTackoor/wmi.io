@@ -1,24 +1,13 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
-import { Organization, PostalAddress } from 'schema-dts'
-
-// HACK: query these w/GraphQL
-import {
-	email,
-	facebookURL,
-	instagramURL,
-	linkedinURL,
-	telephone,
-	twitterURL,
-	youtubeURL,
-} from '../cms/content/settings.json'
-const contactPageSlug = 'contact'
+import { Brand, Organization, PostalAddress } from 'schema-dts'
 
 const graphImg = require('../images/opengraph.png')
+const contactPageSlug = 'contact'
 
 export const WorldmediaLD: FunctionComponent = () => {
-	const { site } = useStaticQuery(
+	const { site, settingsJson } = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -28,10 +17,28 @@ export const WorldmediaLD: FunctionComponent = () => {
 						siteUrl
 					}
 				}
+				settingsJson {
+					email
+					facebookURL
+					instagramURL
+					linkedinURL
+					telephone
+					twitterURL
+					youtubeURL
+				}
 			}
 		`
 	)
 
+	const {
+		email,
+		facebookURL,
+		instagramURL,
+		linkedinURL,
+		telephone,
+		twitterURL,
+		youtubeURL,
+	} = settingsJson
 	const phoneNumber: string = site.siteMetadata.phoneNumber
 	const title: string = site.siteMetadata.title
 	const siteUrl: string = site.siteMetadata.siteUrl
@@ -45,131 +52,130 @@ export const WorldmediaLD: FunctionComponent = () => {
 		streetAddress: '3401 N Miami Ave #239',
 	}
 
-	// TODO: swap from Organization to Brand
-	const brands: Array<Organization & { '@context': 'https://schema.org' }> = [
+	const brands: Array<Brand & { '@context': 'https://schema.org' }> = [
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Alamo',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Latam',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Enterprise',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'National',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Air Canada',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Resorts World Bimini',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Resorts Karisma Hotels & Resorts',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Toronto Escapes',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Norwegian Cruise Line',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'MSC Cruises',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Club Premier',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'South African Airways',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'South Bahamas Paradise Cruise Line',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Cayman Islands Yellow Pages',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Woodspring Hotels',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Meliã Hotels & Resorts',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'CopaAirlines',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Crystal Cruises',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'AeroMexico',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Polynesian Cultural Center',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Children\'s Cancer Caring Center',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Girl Scouts of Hawaii',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'SelectQuote',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'MidiCi',
 		},
 		{
 			'@context': 'https://schema.org',
-			'@type': 'Organization',
+			'@type': 'Brand',
 			name: 'Alert Alarm',
 		},
 	]

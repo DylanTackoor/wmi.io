@@ -206,7 +206,7 @@ collections:
     files:
       - label: General
         name: general
-        file: src/cms/content/settings.json
+        file: src/cms/content/settings/settings.json
         fields:
           - label: Email
             name: email
