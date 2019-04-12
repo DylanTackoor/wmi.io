@@ -12,14 +12,11 @@ const AgencyPage: FunctionComponent = () => {
 				agencyJson {
 					title
 					backgroundVideo
-
 					introTitle
 					introText
 					introBackgroundImage
-
 					teamTitle
 					skills
-
 					statsTitle
 					statsSubtitle
 					stats {
@@ -27,7 +24,6 @@ const AgencyPage: FunctionComponent = () => {
 						stat
 						description
 					}
-
 					ourOffices {
 						city
 						title

@@ -169,7 +169,7 @@ collections:
                 widget: string
       - label: Careers
         name: careers
-        file: src/cms/content/careers.json
+        file: src/cms/content/careers/careers.json
         fields:
           - label: Title
             name: title
