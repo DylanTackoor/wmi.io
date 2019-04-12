@@ -1,201 +1,49 @@
-# Keep `label` field on top
-
 backend:
   name: github
   repo: DylanTackoor/wmi.io
 
-site_url: https://wmi.io
-logo_url: https://wmi.io/admin/logo.svg
+site_url: https://banners.wmi.io
+logo_url: https://banners.wmi.io/admin/logo.svg
 # publish_mode: editorial_workflow # TODO: reenable before this goes live
 media_folder: static/assets
 public_folder: assets
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
 
 collections:
-  - label: Posts
-    label_singular: Post
-    name: posts
-    description: Blog posts. TODO include guidlines here.
-    folder: src/posts
-    create: true
-    fields:
-      - name: slug
-        label: Slug
-      - name: date
-        label: Date
-        widget: date
-      - name: title
-        label: Title
-      - name: body
-        label: Body
-        widget: markdown
-
-  - label: Pages
-    label_singular: Page
-    name: pages
-    description: Pages. TODO include guidlines here.
+  - label: Campaigns
+    label_singular: Campaign
+    name: campaign
+    description: Zip files of banners
     editor:
       preview: false
-    files:
-      - label: Agency
-        name: agency
-        file: src/cms/content/agency/agency.json
+    folder: src/banners
+    create: true
+    fields:
+      - label: Variant
+        name: variant
+        widget: string
+      - label: Banners
+        label_singular: Banner
+        name: banners
+        widget: list
         fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Background Video
-            name: backgroundVideo
-            widget: string
-          - label: Intro Text
-            name: introText
-            widget: string
-          - label: Intro Title
-            name: introTitle
-            widget: string
-          - label: Intro Background Image
-            name: introBackgroundImage
-            widget: image
-          - label: Team Title
-            name: teamTitle
-            widget: string
-          - label: Team Skills
-            name: skills
-            widget: list
-            field: { label: Skill, name: skill, widget: string }
-          - label: Stats Title
-            name: statsTitle
-            widget: string
-          - label: Stats Subtitle
-            name: statsSubtitle
-            widget: string
-          - label: Stats
-            name: stats
-            widget: list
-            fields:
-              - label: Number
-                name: number
-                widget: string
-              - label: Stat
-                name: stat
-                widget: string
-              - label: Description
-                name: description
-                widget: string
-          - label: Our Offices
-            name: ourOffices
-            widget: list
-            fields:
-              - label: City
-                name: city
-                widget: string
-              - label: Title
-                name: title
-                widget: string
-              - label: Logo
-                name: logo
-                widget: image
-          - label: Partner Offices
-            name: partnerOffices
-            widget: list
-            fields:
-              - label: City
-                name: city
-                widget: string
-              - label: Title
-                name: title
-                widget: string
-              - label: Logo
-                name: logo
-                widget: image
-      - label: Blog
-        name: blog
-        file: src/cms/content/blog.json
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Slug
-            name: slug
-            widget: string
-          - label: Post Count
-            name: postCount
-            widget: 'number'
-            default: 5
+          - label: Length
+            name: length
+            widget: number
+            default: 300
             valueType: 'int'
             min: 1
             step: 1
-      - label: About
-        name: about
-        file: src/cms/content/about.json
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Intro
-            name: intro
-            widget: markdown
-          - label: Team
-            name: team
-            widget: list
-            fields:
-              - label: Name
-                name: name
-                widget: string
-              - label: Position
-                name: position
-                widget: string
-              - label: Photo
-                name: photo
-                widget: image
-      - label: Locations
-        name: locations
-        file: src/cms/content/locations.json
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Intro
-            name: intro
-            widget: markdown
-          - label: Locations
-            name: locations
-            widget: list
-            fields:
-              - label: Name
-                name: name
-                widget: string
-              - label: Address
-                name: address
-                widget: string
-      - label: Careers
-        name: careers
-        file: src/cms/content/careers/careers.json
-        fields:
-          - label: Title
-            name: title
-            widget: string
-          - label: Intro
-            name: intro
-            widget: markdown
-          - label: Departments
-            name: departments
-            widget: list
-            fields:
-              - label: Department
-                name: name
-                widget: string
-              - label: Careers
-                name: careers
-                widget: list
-                fields:
-                  - label: Title
-                    name: title
-                    widget: string
-                  - label: Opened
-                    name: opened
-                    widget: date
-                    format: MMM Do YY
-                    # default:
+          - label: Width
+            name: width
+            widget: number
+            default: 300
+            valueType: 'int'
+            min: 1
+            step: 1
 
   - label: Settings
     label_singular: Setting
@@ -204,78 +52,19 @@ collections:
     editor:
       preview: false
     files:
-      - label: General
-        name: general
+      - label: Settings
+        name: settings
         file: src/cms/content/settings/settings.json
         fields:
-          - label: Email
-            name: email
+          - label: Worldmedia Logo
+            name: wmiLogo
+            widget: image
+          - label: Client Logo
+            name: clientLogo
+            widget: image
+          - label: Client URL
+            name: clientURL
             widget: string
-            # pattern: [
-            #   '/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i',
-            #   'Email Address'
-            # ]
-          - label: Phone Number
-            name: telephone
-            widget: string
-            # pattern: [
-            #   '\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$',
-            #   'Phone Number'
-            # ]
-          - label: Facebook URL
-            name: facebookURL
-            widget: string
-            # pattern: [
-            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-            #   'HTTPS URL'
-            # ]
-          - label: Twitter URL
-            name: twitterURL
-            widget: string
-            # pattern: [
-            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-            #   'HTTPS URL'
-            # ]
-          - label: Instagram URL
-            name: instagramURL
-            widget: string
-            # pattern: [
-            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-            #   'HTTPS URL'
-            # ]
-          - label: LinkedIn URL
-            name: linkedinURL
-            widget: string
-            # pattern: [
-            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-            #   'HTTPS URL'
-            # ]
-          - label: YouTube URL
-            name: youtubeURL
-            widget: string
-            # pattern: [
-            #   'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)'
-            #   'HTTPS URL'
-            # ]
-      - label: Analytics
-        name: analytics
-        file: src/cms/content/analytics.json
-        fields:
-          - label: Google Analytics Tracking ID
-            name: googleAnalyticsKey
-            widget: string
-            # pattern: ['/^ua-\d{4,9}-\d{1,4}$/i', 'Google Analytics ID']
-          - label: Google Analytics View ID
-            name: googleAnalyticsViewID
-            widget: string
-          - label: Days of analytics data to use for prefetching
-            name: dayCountForPrefetching
-            widget: 'number'
-            default: 5
-            valueType: 'int'
-            min: 1
-            max: 31
-            step: 1
       - label: Design
         name: design
         file: src/cms/content/design.json
@@ -291,11 +80,3 @@ collections:
             #     '/^((0x){0,1}|#{0,1})([0-9A-F]{8}|[0-9A-F]{6})$/gi',
             #     'Hex Color',
             #   ]
-      - label: SEO
-        name: seo
-        file: src/cms/content/seo.json
-        fields:
-          - label: Default Key Words
-            name: defaultKeyWords
-            widget: 'list'
-            field: { label: Keyword, name: word, widget: string }

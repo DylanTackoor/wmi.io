@@ -1,18 +1,8 @@
-require(`dotenv`).config()
 const { join } = require(`path`)
-
-const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
 const {
-	googleAnalyticsKey,
-	googleAnalyticsViewID,
-	dayCountForPrefetching,
-} = require(`./src/cms/content/analytics.json`)
-
-// Guess.js date range
-const endDate = new Date()
-const startDate = new Date().setDate(endDate.getDate() - dayCountForPrefetching)
-
-const { NODE_ENV, GA_PRIVATE_KEY, GA_CLIENT_EMAIL } = process.env
+	themeColor,
+	backgroundColor,
+} = require(`./src/cms/content/design/design.json`)
 
 const netlifyCmsPaths = {
 	resolve: `gatsby-plugin-netlify-cms-paths`,
@@ -26,16 +16,12 @@ const gatsbyConfig = {
 		title: `Worldmedia Interactive`,
 		description: `Full Service Advertising & Marketing Agency offering SEM, SEO, Display, Social & Traditional Media Services in Miami, Toronto, Hawaii, Orlando and L.A.`,
 		author: `Dylan Tackoor`,
-		siteUrl: `https://wmi.io`,
+		siteUrl: `https://crystal.banners.crystal.banners.wmi.io`,
 	},
 	plugins: [
 		// Type safety
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-tslint`,
-
-		// Image optimizations for GraphQL queries
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
 
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
@@ -67,16 +53,6 @@ const gatsbyConfig = {
 				plugins: [
 					// Including in your Remark plugins will transform any paths in your markdown body
 					netlifyCmsPaths,
-					{
-						resolve: `gatsby-remark-images`,
-						options: {
-							// It's important to specify the maxWidth (in pixels) of
-							// the content container as this plugin uses this as the
-							// base for generating different widths of each image.
-							maxWidth: 930,
-							backgroundColor: `transparent`, // required to display blurred image first
-						},
-					},
 				],
 			},
 		},
@@ -89,21 +65,6 @@ const gatsbyConfig = {
 				path: join(__dirname, `src`, `cms`, `content`),
 			},
 		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `images`,
-				path: join(__dirname, `src`, `images`),
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				name: `markdown-pages`,
-				path: join(__dirname, `src`, `posts`),
-			},
-		},
-		// `gatsby-transformer-remark`,
 
 		// Create compnents & styling together
 		{
@@ -117,27 +78,27 @@ const gatsbyConfig = {
 		`gatsby-plugin-react-helmet`,
 
 		// TODO: pregenerate these images
-		{
-			resolve: `gatsby-plugin-manifest`,
-			options: {
-				name: `Worldmedia Interactive`,
-				short_name: `WMi`,
-				start_url: `/`,
-				background_color: backgroundColor,
-				theme_color: themeColor,
-				display: `standalone`,
-				icon: `src/images/icon.png`, // TODO: update this image
-				theme_color_in_head: true,
-				include_favicon: true,
-			},
-		},
+		// {
+		// 	resolve: `gatsby-plugin-manifest`,
+		// 	options: {
+		// 		name: `Worldmedia Interactive`,
+		// 		short_name: `WMi`,
+		// 		start_url: `/`,
+		// 		background_color: backgroundColor,
+		// 		theme_color: themeColor,
+		// 		display: `standalone`,
+		// 		icon: `src/images/icon.png`, // TODO: update this image
+		// 		theme_color_in_head: true,
+		// 		include_favicon: true,
+		// 	},
+		// },
 
 		// Adds canonical URLs
 		// https://en.wikipedia.org/wiki/Canonical_link_element
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
-				siteUrl: `https://wmi.io`,
+				siteUrl: `https://crystal.banners.wmi.io`,
 			},
 		},
 
@@ -161,9 +122,9 @@ const gatsbyConfig = {
 					console.error(error)
 					/* eslint-enable no-console */
 				},
-				errorClassName: NODE_ENV !== `production`,
+				errorClassName: process.env.NODE_ENV !== `production`,
 				injectStyles:
-					NODE_ENV === `production`
+					process.env.NODE_ENV === `production`
 						? false
 						: `
         .accessibility-error {
@@ -188,39 +149,13 @@ const gatsbyConfig = {
 		// Generates sitemap: https://www.sitemaps.org/
 		`gatsby-plugin-sitemap`,
 
-		// TODO: enter real GTM Id
 		// {
-		// 	resolve: `gatsby-plugin-google-tagmanager`,
+		// 	resolve: `gatsby-plugin-google-analytics`,
 		// 	options: {
-		// 		id: `GTM-W4XMD6J`,
-		// 		includeInDevelopment: false,
+		// 		trackingId: googleAnalyticsKey,
+		// 		head: true,
 		// 	},
 		// },
-		{
-			resolve: `gatsby-plugin-google-analytics`,
-			options: {
-				trackingId: googleAnalyticsKey,
-				head: true,
-			},
-		},
-
-		// Google Analytics machine learning plugin to optimize predictive prefetching
-		{
-			resolve: `gatsby-plugin-guess-js`,
-			options: {
-				GAViewID: googleAnalyticsViewID,
-				jwt: {
-					// HACK: fixes dotenv newline character support
-					private_key: JSON.parse(`"${GA_PRIVATE_KEY}"`),
-					client_email: GA_CLIENT_EMAIL,
-				},
-				minimumThreshold: 0.03,
-				period: {
-					startDate,
-					endDate,
-				},
-			},
-		},
 
 		// File compression
 		`gatsby-plugin-zopfli`,
