@@ -226,6 +226,23 @@ const gatsbyConfig = {
 		`gatsby-plugin-zopfli`,
 		`gatsby-plugin-brotli`,
 
+		// Content Security Policy
+		{
+			resolve: `gatsby-plugin-csp`,
+			options: {
+				disableOnDev: true,
+				mergeScriptHashes: true,
+				mergeStyleHashes: true,
+				mergeDefaultDirectives: true,
+				directives: {
+					'script-src': `'self' https://www.google-analytics.com`,
+					'style-src': `'self' 'unsafe-inline' https://fonts.googleapis.com`,
+					'img-src': `'self' data: https://www.google-analytics.com`,
+					'font-src': `'self' data: https://fonts.gstatic.com`,
+				},
+			},
+		},
+
 		// // Logs sizes of compiled assets
 		// {
 		// 	resolve: `gatsby-plugin-webpack-size`,
