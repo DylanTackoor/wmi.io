@@ -1,6 +1,6 @@
 require(`dotenv`).config()
-const { join } = require(`path`)
 
+const { join } = require(`path`)
 const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
 const {
 	googleAnalyticsKey,
@@ -8,12 +8,13 @@ const {
 	dayCountForPrefetching,
 } = require(`./src/cms/content/analytics.json`)
 
+const { NODE_ENV, GA_PRIVATE_KEY, GA_CLIENT_EMAIL } = process.env
+
 // Guess.js date range
 const endDate = new Date()
 const startDate = new Date().setDate(endDate.getDate() - dayCountForPrefetching)
 
-const { NODE_ENV, GA_PRIVATE_KEY, GA_CLIENT_EMAIL } = process.env
-
+// Replaces a tags in netlify markdown files with Link component
 const netlifyCmsPaths = {
 	resolve: `gatsby-plugin-netlify-cms-paths`,
 	options: {
@@ -37,6 +38,8 @@ const gatsbyConfig = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 
+		// Git based serverless CMS
+		// TODO: determine if there's a reason to keep this as a plugin
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
@@ -47,41 +50,36 @@ const gatsbyConfig = {
 			},
 		},
 
-		{
-			resolve: `gatsby-plugin-netlify`,
-			options: {
-				headers: {
-					'/*': [`Dylan: was here`],
-				},
-			},
-		},
-
-		// Ensures Gatsby catches all links for optimization
+		// Intercepts local links & replaces w/gatsby-link
 		`gatsby-plugin-catch-links`,
 
 		// Including in your Gatsby plugins will transform any paths in your frontmatter
 		netlifyCmsPaths,
+
+		// Converts markdown to html
 		{
 			resolve: `gatsby-transformer-remark`,
 			options: {
 				plugins: [
 					// Including in your Remark plugins will transform any paths in your markdown body
 					netlifyCmsPaths,
+
+					// Use gatsby-image with markdown files
 					{
 						resolve: `gatsby-remark-images`,
 						options: {
-							// It's important to specify the maxWidth (in pixels) of
-							// the content container as this plugin uses this as the
-							// base for generating different widths of each image.
 							maxWidth: 930,
-							backgroundColor: `transparent`, // required to display blurred image first
+							backgroundColor: `transparent`,
 						},
 					},
 				],
 			},
 		},
 
+		// Creates graphql nodes for json files
 		`gatsby-transformer-json`,
+
+		// Adds graphql nodes for files in local dirs
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -103,20 +101,14 @@ const gatsbyConfig = {
 				path: join(__dirname, `src`, `posts`),
 			},
 		},
-		// `gatsby-transformer-remark`,
 
-		// Create compnents & styling together
-		{
-			resolve: `gatsby-plugin-emotion`,
-			options: {
-				// Accepts all options defined by `babel-plugin-emotion` plugin.
-			},
-		},
+		// SSR support for emotion CSS-In-JS
+		`gatsby-plugin-emotion`,
 
-		// Sets elements in <head>
+		// SSR support for Helmet meta tags
 		`gatsby-plugin-react-helmet`,
 
-		// TODO: pregenerate these images
+		// generates manifest.json: https://developers.google.com/web/fundamentals/web-app-manifest/
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -126,14 +118,13 @@ const gatsbyConfig = {
 				background_color: backgroundColor,
 				theme_color: themeColor,
 				display: `standalone`,
-				icon: `src/images/icon.png`, // TODO: update this image
+				icon: `src/images/icon.png`, // TODO: pregenerate these images
 				theme_color_in_head: true,
 				include_favicon: true,
 			},
 		},
 
-		// Adds canonical URLs
-		// https://en.wikipedia.org/wiki/Canonical_link_element
+		// Adds canonical URLs: https://en.wikipedia.org/wiki/Canonical_link_element
 		{
 			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
@@ -142,6 +133,7 @@ const gatsbyConfig = {
 		},
 
 		// Async load fonts
+		// TODO: look into alternatives
 		{
 			resolve: `gatsby-plugin-web-font-loader`,
 			options: {
@@ -196,6 +188,7 @@ const gatsbyConfig = {
 		// 		includeInDevelopment: false,
 		// 	},
 		// },
+
 		{
 			resolve: `gatsby-plugin-google-analytics`,
 			options: {
@@ -204,7 +197,7 @@ const gatsbyConfig = {
 			},
 		},
 
-		// Google Analytics machine learning plugin to optimize predictive prefetching
+		// Google Analytics based predictive prefetching
 		{
 			resolve: `gatsby-plugin-guess-js`,
 			options: {
@@ -221,10 +214,6 @@ const gatsbyConfig = {
 				},
 			},
 		},
-
-		// File compression
-		`gatsby-plugin-zopfli`,
-		`gatsby-plugin-brotli`,
 
 		// Content Security Policy
 		{
@@ -243,7 +232,11 @@ const gatsbyConfig = {
 			},
 		},
 
-		// // Logs sizes of compiled assets
+		// File compression
+		`gatsby-plugin-zopfli`,
+		`gatsby-plugin-brotli`,
+
+		// // Logs bundle sizes
 		// {
 		// 	resolve: `gatsby-plugin-webpack-size`,
 		// 	options: {
@@ -262,11 +255,16 @@ const gatsbyConfig = {
 		},
 
 		// Utilize undocumented Netlify build server cache
+		`gatsby-plugin-netlify-cache`,
+
+		// make sure to put last in the array
 		{
-			resolve: `gatsby-plugin-netlify-cache`,
-			// options: {
-			// 	extraDirsToCache: ["extraDir", ".extraDotDir", "extra/dir"],
-			// },
+			resolve: `gatsby-plugin-netlify`,
+			options: {
+				headers: {
+					'/*': [`dylan: was here`],
+				},
+			},
 		},
 	],
 }
