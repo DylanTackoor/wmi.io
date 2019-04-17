@@ -30,6 +30,27 @@ const gatsbyConfig = {
 		siteUrl: `https://wmi.io`,
 	},
 	plugins: [
+		{
+			resolve: `gatsby-plugin-humans-txt`,
+			options: {
+				team: [
+					{
+						Developer: `Dylan Tackoor`,
+						GitHub: `dylantackoor`,
+						Twitter: `@dylantackoor`,
+					},
+				],
+				thanks: [`Gatsby`, `Node`],
+				site: {
+					'Last update': `2019/4/16`,
+					Standards: `JavaScript`,
+					Components: `humans-generator`,
+					Softwares: `Visual Studio Code`,
+				},
+				note: `Made in Miami.`,
+			},
+		},
+
 		// Type safety
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-tslint`,
