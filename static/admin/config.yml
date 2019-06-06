@@ -208,6 +208,9 @@ collections:
         name: general
         file: src/cms/content/settings/settings.json
         fields:
+          - label: Default Open Graph Image
+            name: openGraphImg
+            widget: image
           - label: Email
             name: email
             widget: string
