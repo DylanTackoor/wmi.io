@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 
+// TODO: pull thru GraphQL/CMS so dimensions can be calculated
 const graphImgRelPath = require('../images/opengraph.png')
 
 interface ISeoConfig {
@@ -50,7 +51,7 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 			<meta property='og:site_name' content={title} />
 			<meta property='og:image' content={graphImgURL} />
 			<meta property='og:image:secure_url' content={graphImgURL} />
-			<meta property='og:image:alt' content='Worldmedia Interactive Logo' />
+			<meta property='og:image:alt' content='Worldmedia Interactive' />
 			<meta property='og:image:width' content='1200' />
 			<meta property='og:image:height' content='630' />
 
