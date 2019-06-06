@@ -60,7 +60,7 @@ const gatsbyConfig = {
 		`gatsby-plugin-sharp`,
 
 		// Git based serverless CMS
-		// TODO: determine if there's a reason to keep this as a plugin
+
 		{
 			resolve: `gatsby-plugin-netlify-cms`,
 			options: {
@@ -240,7 +240,7 @@ const gatsbyConfig = {
 		{
 			resolve: `gatsby-plugin-csp`,
 			options: {
-				disableOnDev: true,
+				disableOnDev: false,
 				mergeScriptHashes: true,
 				mergeStyleHashes: true,
 				mergeDefaultDirectives: true,
@@ -249,6 +249,7 @@ const gatsbyConfig = {
 					'style-src': `'self' 'unsafe-inline' https://fonts.googleapis.com`,
 					'img-src': `'self' data: https://www.google-analytics.com`,
 					'font-src': `'self' data: https://fonts.gstatic.com`,
+					'frame-src': `'self' https://www.youtube-nocookie.com`,
 				},
 			},
 		},
