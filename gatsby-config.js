@@ -1,12 +1,15 @@
 require(`dotenv`).config()
 
 const { join } = require(`path`)
-const { themeColor, backgroundColor } = require(`./src/cms/content/design.json`)
+const {
+	themeColor,
+	backgroundColor,
+} = require(`./src/cms/content/design/design.json`)
 const {
 	googleAnalyticsKey,
 	googleAnalyticsViewID,
 	dayCountForPrefetching,
-} = require(`./src/cms/content/analytics.json`)
+} = require(`./src/cms/content/analytics/analytics.json`)
 
 const { NODE_ENV, GA_PRIVATE_KEY, GA_CLIENT_EMAIL } = process.env
 

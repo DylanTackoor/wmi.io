@@ -262,7 +262,7 @@ collections:
             # ]
       - label: Analytics
         name: analytics
-        file: src/cms/content/analytics.json
+        file: src/cms/content/analytics/analytics.json
         fields:
           - label: Google Analytics Tracking ID
             name: googleAnalyticsKey
@@ -281,7 +281,7 @@ collections:
             step: 1
       - label: Design
         name: design
-        file: src/cms/content/design.json
+        file: src/cms/content/design/design.json
         fields:
           - label: Theme Color
             name: themeColor
@@ -296,7 +296,7 @@ collections:
             #   ]
       - label: SEO
         name: seo
-        file: src/cms/content/seo.json
+        file: src/cms/content/seo/seo.json
         fields:
           - label: Default Key Words
             name: defaultKeyWords
