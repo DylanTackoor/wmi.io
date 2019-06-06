@@ -2,9 +2,6 @@
 
 const path = require(`path`)
 
-// HACK: query these w/GraphQL
-const blogPage = require(`./src/cms/content/blog.json`)
-
 exports.createPages = async ({ graphql, actions }) => {
 	// Expose Gatsby APIs
 	const { createPage } = actions
@@ -12,6 +9,9 @@ exports.createPages = async ({ graphql, actions }) => {
 	// Query for data
 	const result = await graphql(`
 		{
+			blogJson {
+				slug
+			}
 			allMarkdownRemark(
 				filter: { fileAbsolutePath: { regex: "/src/posts/" } }
 			) {
@@ -33,13 +33,13 @@ exports.createPages = async ({ graphql, actions }) => {
 	}
 
 	// Extract data from query results
-	const { allMarkdownRemark } = result.data
+	const { allMarkdownRemark, blogJson } = result.data
 
 	const postTemplate = path.resolve(`./src/templates/post.tsx`)
 	allMarkdownRemark.edges.forEach(({ node }) => {
 		if (node.fileAbsolutePath.includes(`/src/posts/`)) {
 			createPage({
-				path: `${blogPage.slug}/${node.frontmatter.slug}/`,
+				path: `${blogJson.slug}/${node.frontmatter.slug}/`,
 				context: { slug: node.frontmatter.slug },
 				component: postTemplate,
 			})

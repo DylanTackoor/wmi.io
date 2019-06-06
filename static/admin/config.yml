@@ -109,7 +109,7 @@ collections:
                 widget: image
       - label: Blog
         name: blog
-        file: src/cms/content/blog.json
+        file: src/cms/content/blog/blog.json
         fields:
           - label: Title
             name: title
