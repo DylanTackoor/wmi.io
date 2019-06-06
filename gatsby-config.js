@@ -279,6 +279,27 @@ const gatsbyConfig = {
 		// Utilize undocumented Netlify build server cache
 		`gatsby-plugin-netlify-cache`,
 
+		{
+			resolve: `gatsby-plugin-humans-txt`,
+			options: {
+				team: [
+					{
+						Developer: `Dylan Tackoor`,
+						GitHub: `dylantackoor`,
+						Twitter: `@dylantackoor`,
+					},
+				],
+				thanks: [`Gatsby`, `Node`],
+				site: {
+					'Last update': `2019/4/16`,
+					Standards: `JavaScript`,
+					Components: `humans-generator`,
+					Softwares: `Visual Studio Code`,
+				},
+				note: `Made in Miami.`,
+			},
+		},
+
 		// make sure to put last in the array
 		{
 			resolve: `gatsby-plugin-netlify`,

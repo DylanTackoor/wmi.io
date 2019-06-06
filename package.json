@@ -48,7 +48,7 @@
 		"gatsby-plugin-google-analytics": "^2.0.20",
 		"gatsby-plugin-google-tagmanager": "^2.0.15",
 		"gatsby-plugin-guess-js": "^1.0.6",
-		"gatsby-plugin-humans-txt": "1.1.3",
+		"gatsby-plugin-humans-txt": "^1.1.3",
 		"gatsby-plugin-manifest": "^2.1.1",
 		"gatsby-plugin-netlify": "^2.0.17",
 		"gatsby-plugin-netlify-cache": "^1.2.0",
