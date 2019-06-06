@@ -3,7 +3,6 @@ import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 import { Brand, Organization, PostalAddress } from 'schema-dts'
 
-const graphImg = require('../images/opengraph.png')
 const contactPageSlug = 'contact'
 
 export const WorldmediaLD: FunctionComponent = () => {
@@ -18,6 +17,7 @@ export const WorldmediaLD: FunctionComponent = () => {
 					}
 				}
 				settingsJson {
+					openGraphImg
 					email
 					facebookURL
 					instagramURL
@@ -31,6 +31,7 @@ export const WorldmediaLD: FunctionComponent = () => {
 	)
 
 	const {
+		openGraphImg,
 		email,
 		facebookURL,
 		instagramURL,
@@ -184,7 +185,7 @@ export const WorldmediaLD: FunctionComponent = () => {
 		'@context': 'https://schema.org',
 		'@type': 'Organization',
 		description,
-		image: `${siteUrl}${graphImg}`,
+		image: `${siteUrl}${openGraphImg}`,
 		name: title,
 		email,
 		telephone,

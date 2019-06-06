@@ -2,9 +2,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { FunctionComponent } from 'react'
 import Helmet from 'react-helmet'
 
-// TODO: pull thru GraphQL/CMS so dimensions can be calculated
-const graphImgRelPath = require('../images/opengraph.png')
-
 interface ISeoConfig {
 	description?: string
 	lang?: string
@@ -15,7 +12,7 @@ interface ISeoConfig {
 }
 
 export const SEO: FunctionComponent<ISeoConfig> = props => {
-	const { site } = useStaticQuery(
+	const { site, settingsJson } = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -25,12 +22,15 @@ export const SEO: FunctionComponent<ISeoConfig> = props => {
 						siteUrl
 					}
 				}
+				settingsJson {
+					openGraphImg
+				}
 			}
 		`
 	)
 
 	const siteMetadata: ISeoConfig = site.siteMetadata
-	const graphImgURL = `${siteMetadata.siteUrl}${graphImgRelPath}`
+	const graphImgURL = `${siteMetadata.siteUrl}${settingsJson.openGraphImg}`
 	const title = props.title
 		? `${props.title} | ${siteMetadata.title}`
 		: siteMetadata.title
